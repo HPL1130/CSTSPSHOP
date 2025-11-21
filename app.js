@@ -1,207 +1,188 @@
-// === 全域狀態 ===
-let data = {}; // {category: Item[]}
-let currentCategory = 'all';
+// app.js
+
+const SHOP_DATA_FILE = 'shop_data.json';
+const itemsPerPage = 10;
 let currentPage = 1;
-const itemsPerPage = 30; // 每頁固定 30 筆
-let currentKeyword = '';
-let currentDistrict = 'all';
+let allShops = [];
+let filteredShops = [];
+let availableDistricts = new Set();
 
-// 資料來源，只讀取一個 JSON 檔案
-const DATA_SOURCE = 'shop_data.json';
-
-// 類別名稱對應表 (用於顯示中文名稱)
-const CATEGORY_MAP = {
-  'medical': '醫療保健',
-  'food': '美食餐飲',
-  'leisure': '休閒住宿',
-  'daily': '生活用品',
-  'learning': '學習教育',
-  'moto': '機/腳踏車',
-  '3c': '３Ｃ通訊',
-  'car': '汽車服務',
-  'finance': '金融保險',
-  'other': '其他類',
-};
+const shopListElement = document.getElementById('shopList');
+const keywordInput = document.getElementById('keywordInput');
+const districtFilter = document.getElementById('districtFilter');
+const pageInfo = document.getElementById('pageInfo');
+const prevBtn = document.getElementById('prevBtn');
+const nextBtn = document.getElementById('nextBtn');
+const categoryButtons = document.querySelector('.category-buttons');
 
 /**
- * 從 JSON 載入資料並按類別分組
+ * 載入特約商店資料
  */
-async function loadData(){
-  const groupedData = {};
-  try{
-    const res = await fetch(DATA_SOURCE);
-    if (!res.ok) throw new Error('資料載入失敗');
-    const shops = await res.json();
+async function loadShops() {
+  try {
+    const response = await fetch(SHOP_DATA_FILE);
+    if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
     
-    // 將所有商店按 category 分組
-    shops.forEach(item => {
-      const catKey = item.category || 'other';
-      groupedData[catKey] = groupedData[catKey] || [];
-      groupedData[catKey].push(item);
+    allShops = await response.json();
+    
+    // 收集所有地區，並填入下拉選單
+    allShops.forEach(shop => {
+      // 如果 location 包含多個地區，需要拆分並個別加入
+      const locations = shop.location.split('、'); 
+      locations.forEach(loc => {
+        const trimmedLoc = loc.trim();
+        if (trimmedLoc) {
+            availableDistricts.add(trimmedLoc);
+        }
+      });
     });
+
+    populateDistrictFilter();
     
-    data = groupedData;
-  }catch(e){ 
-    console.error('特約商店資料載入錯誤：', e); 
+    // 預設篩選「全部」
+    filterAndRender();
+
+  } catch (error) {
+    console.error("Error loading shop data:", error);
+    shopListElement.innerHTML = `<p style="text-align: center; color: var(--text);">載入商店資料失敗，請檢查 ${SHOP_DATA_FILE} 檔案路徑與內容。</p>`;
   }
 }
 
 /**
- * 動態渲染地區篩選下拉選單
+ * 填充地區篩選下拉選單
  */
-function renderDistrictOptions(){
-  const districts = new Set(); 
-  const allItems = Object.values(data).flat();
-  allItems.forEach(i => { if (i.location) districts.add(i.location); });
-  
-  const sel = document.getElementById('districtFilter');
-  // 移除舊選項，保留 "所有地區"
-  sel.querySelectorAll('option:not([value="all"])').forEach(o => o.remove());
-  
-  // 添加新的地區選項
-  Array.from(districts).sort().forEach(d => { 
-    const opt = document.createElement('option'); 
-    opt.value = d; 
-    opt.textContent = d; 
-    sel.appendChild(opt); 
+function populateDistrictFilter() {
+  const sortedDistricts = Array.from(availableDistricts).sort((a, b) => {
+    // 將「全台」或「全省」放在最前面
+    if (a.includes('全')) return -1;
+    if (b.includes('全')) return 1;
+    // 將「網路」放在中間
+    if (a.includes('網路')) return -1;
+    if (b.includes('網路')) return 1;
+    return a.localeCompare(b, 'zh-Hant'); // 依照中文筆畫排序
   });
-  sel.value = currentDistrict;
+  
+  // 清空除了「所有地區」以外的選項
+  districtFilter.innerHTML = '<option value="all">所有地區</option>';
+  
+  sortedDistricts.forEach(district => {
+    const option = document.createElement('option');
+    option.value = district;
+    option.textContent = district;
+    districtFilter.appendChild(option);
+  });
 }
 
 /**
- * 渲染商店列表
+ * 核心篩選函式：根據類別、地區、關鍵字過濾資料
  */
-function renderList(){
-  const container = document.getElementById('shopList'); 
-  container.innerHTML = '';
+function filterAndRender() {
+  const activeCategory = document.querySelector('.category-buttons .active').dataset.cat;
+  const selectedDistrict = districtFilter.value;
+  const keyword = keywordInput.value.toLowerCase().trim();
   
-  // 1. 篩選資料
-  let items = currentCategory === 'all' 
-    ? Object.values(data).flat() 
-    : (data[currentCategory] || []);
-  
-  const kw = (currentKeyword || '').trim().toLowerCase();
-  if (kw){ 
-    items = items.filter(i => 
-      (i.name || '').toLowerCase().includes(kw) || 
-      (i.location || '').toLowerCase().includes(kw)
-    ); 
-  }
-  
-  if (currentDistrict !== 'all'){ 
-    items = items.filter(i => (i.location || '') === currentDistrict); 
-  }
+  filteredShops = allShops.filter(shop => {
+    // 1. 類別篩選
+    const categoryMatch = activeCategory === 'all' || shop.category === activeCategory;
 
-  // 2. 分頁計算
-  const totalPages = Math.max(1, Math.ceil(items.length / itemsPerPage));
-  if (currentPage > totalPages) currentPage = totalPages;
-  const start = (currentPage - 1) * itemsPerPage; 
-  const pageItems = items.slice(start, start + itemsPerPage);
+    // 2. 地區篩選
+    const districtMatch = selectedDistrict === 'all' || shop.location.includes(selectedDistrict);
 
-  // 3. 渲染列表
-  if (pageItems.length === 0) {
-      container.innerHTML = `<p style="text-align: center; margin-top: 2rem; color: #777;">查無符合條件的特約商店。</p>`;
-  }
+    // 3. 關鍵字篩選 (包含店名、優惠內容、地點)
+    const keywordMatch = !keyword || 
+                         shop.name.toLowerCase().includes(keyword) ||
+                         (shop.discount && shop.discount.toLowerCase().includes(keyword)) ||
+                         shop.location.toLowerCase().includes(keyword);
 
-  pageItems.forEach(item => {
-    const card = document.createElement('div'); 
-    card.className = 'shop-item';
-    
-    // 類別標籤
-    const catLabel = document.createElement('span'); 
-    catLabel.className = 'item-category';
-    catLabel.textContent = CATEGORY_MAP[item.category] || '其他類';
-    card.appendChild(catLabel);
-    
-    // 商店名稱
-    const header = document.createElement('div'); 
-    header.className = 'item-header';
-    const nameEl = document.createElement('h2'); 
-    nameEl.textContent = item.name || '未命名商店';
-    header.appendChild(nameEl); 
-    card.appendChild(header);
-
-    // 商店資訊
-    const body = document.createElement('div'); 
-    body.className = 'item-body';
-    body.innerHTML = `
-      <p class="item-location"><strong>地區：</strong>${item.location || '-'}</p>
-      ${item.address ? `<p><strong>地址：</strong>${item.address}</p>` : ''}
-      ${item.phone ? `<p><strong>電話：</strong>${item.phone}</p>` : ''}
-      ${item.discount ? `<p style="color:var(--brand); margin-top: 8px;"><strong>優惠內容：</strong>${item.discount}</p>` : ''}
-    `;
-    card.appendChild(body);
-
-    // 連結動作 (搜尋導航)
-    const actions = document.createElement('div'); 
-    actions.className = 'item-actions';
-    const query = encodeURIComponent(`${item.location} ${item.name}`);
-    const navA = document.createElement('a'); 
-    navA.className = 'btn'; 
-    navA.href = `https://www.google.com/maps/search/?api=1&query=${query}`; 
-    navA.target = '_blank'; 
-    navA.rel = 'noopener'; 
-    navA.textContent = '地圖搜尋';
-    
-    actions.appendChild(navA); 
-    card.appendChild(actions);
-    container.appendChild(card);
+    return categoryMatch && districtMatch && keywordMatch;
   });
 
-  // 4. 更新分頁資訊
-  document.getElementById('pageInfo').textContent = `${currentPage} / ${totalPages}`;
-  const prev = document.getElementById('prevBtn'); 
-  const next = document.getElementById('nextBtn');
-  prev.disabled = currentPage <= 1; 
-  next.disabled = currentPage >= totalPages;
+  currentPage = 1;
+  renderList();
 }
 
 /**
- * 綁定所有互動事件
+ * 渲染商店列表及分頁控制
  */
-function bindEvents(){
-  // 類別按鈕
-  document.querySelectorAll('.category-buttons button').forEach(btn => {
-    btn.addEventListener('click', () => { 
-      document.querySelectorAll('.category-buttons button').forEach(b => b.classList.remove('active')); 
-      btn.classList.add('active'); 
-      currentCategory = btn.getAttribute('data-cat'); 
-      currentPage = 1; 
-      renderList(); 
+function renderList() {
+  const totalPages = Math.ceil(filteredShops.length / itemsPerPage);
+  const start = (currentPage - 1) * itemsPerPage;
+  const end = start + itemsPerPage;
+  const shopsToDisplay = filteredShops.slice(start, end);
+
+  shopListElement.innerHTML = '';
+  
+  if (shopsToDisplay.length === 0) {
+    shopListElement.innerHTML = `<p class="no-results">找不到符合條件的特約商店。</p>`;
+  } else {
+    shopsToDisplay.forEach(item => {
+      const card = document.createElement('div');
+      card.className = 'shop-card';
+      
+      // 商店名稱和地點
+      const header = document.createElement('div');
+      header.className = 'item-header';
+      header.innerHTML = `
+        <h2>${item.name}</h2>
+        <span class="location-badge">${item.location}</span>
+      `;
+      card.appendChild(header);
+
+      // 商店資訊 (包含優惠內容)
+      const body = document.createElement('div'); 
+      body.className = 'item-body';
+      body.innerHTML = `
+        ${item.discount ? `<p style="color:var(--brand); margin-top: 8px;"><strong>優惠內容：</strong>${item.discount}</p>` : '<p style="color:#666; margin-top: 8px;">優惠內容：請洽店家或內部公告</p>'}
+      `;
+      card.appendChild(body);
+
+      shopListElement.appendChild(card);
     });
-  });
-  
-  // 關鍵字輸入
-  document.getElementById('keywordInput').addEventListener('input', e => { 
-    currentKeyword = e.target.value; 
-    currentPage = 1; 
-    renderList(); 
-  });
-  
-  // 地區篩選
-  document.getElementById('districtFilter').addEventListener('change', e => { 
-    currentDistrict = e.target.value; 
-    currentPage = 1; 
-    renderList(); 
-  });
-  
-  // 上一頁/下一頁
-  document.getElementById('prevBtn').addEventListener('click', () => { 
-    if (currentPage > 1) { 
-      currentPage--; 
-      renderList(); 
-    } 
-  });
-  document.getElementById('nextBtn').addEventListener('click', () => { 
-    currentPage++; 
-    renderList(); 
-  });
+  }
+
+  // 更新分頁資訊
+  pageInfo.textContent = `第 ${currentPage} 頁 / 共 ${totalPages} 頁 (共 ${filteredShops.length} 筆)`;
+  prevBtn.disabled = currentPage === 1;
+  nextBtn.disabled = currentPage === totalPages || totalPages === 0;
 }
 
-// 應用程式初始化
-(async function init(){ 
-  await loadData(); 
-  renderDistrictOptions(); 
-  bindEvents(); 
-  renderList(); 
-})();
+/**
+ * 事件監聽器：切換類別
+ */
+categoryButtons.addEventListener('click', (e) => {
+  const button = e.target.closest('button');
+  if (button) {
+    // 移除所有按鈕的 active 狀態
+    categoryButtons.querySelectorAll('button').forEach(btn => btn.classList.remove('active'));
+    // 為被點擊的按鈕添加 active 狀態
+    button.classList.add('active');
+    filterAndRender();
+  }
+});
+
+/**
+ * 事件監聽器：分頁控制
+ */
+prevBtn.addEventListener('click', () => {
+  if (currentPage > 1) {
+    currentPage--;
+    renderList();
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
+});
+
+nextBtn.addEventListener('click', () => {
+  const totalPages = Math.ceil(filteredShops.length / itemsPerPage);
+  if (currentPage < totalPages) {
+    currentPage++;
+    renderList();
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
+});
+
+// 地區篩選器、關鍵字搜尋器變動時即時篩選
+districtFilter.addEventListener('change', filterAndRender);
+keywordInput.addEventListener('input', filterAndRender);
+
+// 載入資料
+loadShops();
