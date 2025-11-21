@@ -1,1 +1,51 @@
+/* CST SPSHOP Theme v1.0 */
+:root{ 
+  --brand: #D32F2F; /* CST Red */
+  --light-brand: #FFCDD2;
+  --text: #333333; 
+  --bg-color: #fce4e4; /* Light pink/red background */
+}
+*{box-sizing:border-box}
+body{margin:0;font-family:"Noto Sans TC",system-ui,-apple-system,Segoe UI,Roboto,"Helvetica Neue",Arial; color:var(--text); background:linear-gradient(180deg,#fff 0%, var(--bg-color) 100%);} 
 
+/* Header & Banner */
+.site-header{background:var(--brand);color:#fff;text-align:center;padding:.25rem 1rem;}
+.hero-wrap{position:relative;max-width:680px;margin:.25rem auto}
+.site-header .hero{width:100%;max-height:180px;object-fit:contain;border-radius:12px;box-shadow:0 6px 20px rgba(0,0,0,.15)}
+.site-header .brand{font-size:1.3rem;font-weight:700;margin:.25rem auto}
+
+/* Container & Layout */
+.container{max-width:1100px;margin:0 auto;padding:1rem}
+.category-buttons{display:flex;flex-wrap:wrap;gap:.5rem;justify-content:center;margin-bottom:1rem}
+.category-buttons button{
+  background:#fff;border:1px solid #ccc;color:var(--text);padding:.5rem 1rem;
+  border-radius:9999px;cursor:pointer;display:flex;align-items:center;gap:6px;
+  font-weight:600;transition:all .2s;
+}
+.category-buttons button img{width:20px;height:20px}
+.category-buttons button.active{
+  background:var(--brand);color:#fff;border-color:var(--brand);box-shadow:0 2px 5px rgba(0,0,0,.1);
+}
+
+/* Filters */
+.filters{display:flex;flex-wrap:wrap;gap:1rem;margin-bottom:1.5rem;align-items:center}
+#keywordInput, #districtFilter{padding:.5rem;border:1px solid #ccc;border-radius:6px;flex-grow:1;max-width:300px;}
+.toggle{display:none;} /* 移除不需要的驗證開關 */
+
+/* List */
+.shop-list{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:1rem}
+.shop-item{background:#fff;border-radius:8px;box-shadow:0 4px 6px rgba(0,0,0,.08);padding:1rem;position:relative}
+.item-header h2{font-size:1.1rem;margin:0;color:var(--brand)}
+.item-body p{margin:.2rem 0;font-size:0.95rem}
+.item-location{font-weight:600;color:#555;}
+.item-category{position:absolute;top:10px;right:10px;padding:.25rem .5rem;border-radius:9999px;font-size:.75rem;background:var(--light-brand);color:var(--brand);font-weight: bold;}
+
+/* Footer */
+.site-footer{text-align:center;padding:1rem;background:#333;color:#ccc;margin-top:2rem}
+.site-footer p{margin:0}
+
+/* Pager */
+.pager{display:flex;justify-content:center;align-items:center;gap:1rem;margin-top:1.5rem}
+.pager .btn{padding:.5rem 1rem;background:var(--brand);color:#fff;border:none;border-radius:6px;cursor:pointer}
+.pager .btn:disabled{background:#ccc;cursor:not-allowed}
+.page-info{font-weight:600}
