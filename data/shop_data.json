@@ -1,1 +1,2348 @@
-
+[
+  {
+    "category": "medical",
+    "name": "白佳欣眼科診所",
+    "location": "台中市",
+    "discount": "雷射手術、眼科診所"
+  },
+  {
+    "category": "medical",
+    "name": "統誠醫療體系",
+    "location": "員林市",
+    "discount": "中醫、西醫、眼科"
+  },
+  {
+    "category": "medical",
+    "name": "賴醫事檢驗所",
+    "location": "員林市",
+    "discount": "請洽店家或內部公告"
+  },
+  {
+    "category": "medical",
+    "name": "彰基醫療體系醫院",
+    "location": "全台",
+    "discount": "請洽店家或內部公告"
+  },
+  {
+    "category": "medical",
+    "name": "博文診所",
+    "location": "員林市",
+    "discount": "請洽店家或內部公告"
+  },
+  {
+    "category": "medical",
+    "name": "秀傳紀念醫院",
+    "location": "彰化市",
+    "discount": "含彰濱秀傳"
+  },
+  {
+    "category": "medical",
+    "name": "群欣牙醫診所",
+    "location": "彰化市",
+    "discount": "請洽店家或內部公告"
+  },
+  {
+    "category": "medical",
+    "name": "周詳牙醫診所",
+    "location": "員林市",
+    "discount": "請洽店家或內部公告"
+  },
+  {
+    "category": "medical",
+    "name": "高新牙醫診所",
+    "location": "員林市",
+    "discount": "請洽店家或內部公告"
+  },
+  {
+    "category": "medical",
+    "name": "員生醫院",
+    "location": "員林市",
+    "discount": "請洽店家或內部公告"
+  },
+  {
+    "category": "medical",
+    "name": "宏元診所",
+    "location": "永靖鄉",
+    "discount": "請洽店家或內部公告"
+  },
+  {
+    "category": "medical",
+    "name": "祐康中醫診所",
+    "location": "斗六市",
+    "discount": "請洽店家或內部公告"
+  },
+  {
+    "category": "medical",
+    "name": "禾安中醫診所",
+    "location": "員林市",
+    "discount": "請洽店家或內部公告"
+  },
+  {
+    "category": "medical",
+    "name": "員榮醫院",
+    "location": "員林市",
+    "discount": "請洽店家或內部公告"
+  },
+  {
+    "category": "medical",
+    "name": "愛心小兒科家醫科診所",
+    "location": "員林市",
+    "discount": "請洽店家或內部公告"
+  },
+  {
+    "category": "medical",
+    "name": "林骨科診所",
+    "location": "斗六市",
+    "discount": "請洽店家或內部公告"
+  },
+  {
+    "category": "medical",
+    "name": "脩合水中醫診所",
+    "location": "員林市",
+    "discount": "請洽店家或內部公告"
+  },
+  {
+    "category": "medical",
+    "name": "洪揚醫院",
+    "location": "斗六市",
+    "discount": "請洽店家或內部公告"
+  },
+  {
+    "category": "medical",
+    "name": "員林基督教醫院",
+    "location": "員林市",
+    "discount": "請洽店家或內部公告"
+  },
+  {
+    "category": "medical",
+    "name": "綻美牙醫診所",
+    "location": "員林市",
+    "discount": "請洽店家或內部公告"
+  },
+  {
+    "category": "medical",
+    "name": "台中榮總健檢方案",
+    "location": "台中市",
+    "discount": "請洽店家或內部公告"
+  },
+  {
+    "category": "medical",
+    "name": "佳新牙醫診所",
+    "location": "員林市",
+    "discount": "請洽店家或內部公告"
+  },
+  {
+    "category": "medical",
+    "name": "秀明耳鼻喉科診所",
+    "location": "秀水鄉",
+    "discount": "請洽店家或內部公告"
+  },
+  {
+    "category": "medical",
+    "name": "英倫牙醫體系",
+    "location": "全台",
+    "discount": "請洽店家或內部公告"
+  },
+  {
+    "category": "medical",
+    "name": "正光藥局",
+    "location": "全台",
+    "discount": "請洽店家或內部公告"
+  },
+  {
+    "category": "medical",
+    "name": "宏仁醫院",
+    "location": "員林市",
+    "discount": "請洽店家或內部公告"
+  },
+  {
+    "category": "food",
+    "name": "達美樂PIZZA",
+    "location": "員林市",
+    "discount": "請洽店家或內部公告"
+  },
+  {
+    "category": "food",
+    "name": "必勝客PIZZA",
+    "location": "員林市",
+    "discount": "請洽店家或內部公告"
+  },
+  {
+    "category": "food",
+    "name": "飯捲王",
+    "location": "員林市",
+    "discount": "請洽店家或內部公告"
+  },
+  {
+    "category": "food",
+    "name": "阿默蛋糕",
+    "location": "全省",
+    "discount": "請洽店家或內部公告"
+  },
+  {
+    "category": "food",
+    "name": "好婆婆專業月子餐",
+    "location": "台中市",
+    "discount": "請洽店家或內部公告"
+  },
+  {
+    "category": "food",
+    "name": "心食上 現代飲食餐廳",
+    "location": "社頭鄉",
+    "discount": "請洽店家或內部公告"
+  },
+  {
+    "category": "food",
+    "name": "心月米膳坊",
+    "location": "員林市",
+    "discount": "請洽店家或內部公告"
+  },
+  {
+    "category": "food",
+    "name": "鴻豆王國咖啡館",
+    "location": "斗六市",
+    "discount": "請洽店家或內部公告"
+  },
+  {
+    "category": "food",
+    "name": "鮮友火鍋",
+    "location": "彰化市",
+    "discount": "請洽店家或內部公告"
+  },
+  {
+    "category": "food",
+    "name": "彰濱秀傳紀念醫院附屬美食街",
+    "location": "彰化市",
+    "discount": "請洽店家或內部公告"
+  },
+  {
+    "category": "food",
+    "name": "石井屋日本料理店",
+    "location": "彰化市、台中市、員林市",
+    "discount": "請洽店家或內部公告"
+  },
+  {
+    "category": "food",
+    "name": "HONEY PASTA",
+    "location": "員林市",
+    "discount": "請洽店家或內部公告"
+  },
+  {
+    "category": "food",
+    "name": "TASTY西堤牛排",
+    "location": "斗六市",
+    "discount": "斗六家樂福店"
+  },
+  {
+    "category": "food",
+    "name": "宏銘的廚房",
+    "location": "埔心鄉",
+    "discount": "請洽店家或內部公告"
+  },
+  {
+    "category": "food",
+    "name": "亞米餐飲",
+    "location": "員林市",
+    "discount": "希拉餐廳/喜喜茶室/遮打道洋行/關於餐桌/日常與菜"
+  },
+  {
+    "category": "food",
+    "name": "本屋烘培坊",
+    "location": "斗六市",
+    "discount": "請洽店家或內部公告"
+  },
+  {
+    "category": "food",
+    "name": "客家本色",
+    "location": "台中市、員林市、嘉義市",
+    "discount": "請洽店家或內部公告"
+  },
+  {
+    "category": "food",
+    "name": "鐵町-心作鐵板料理",
+    "location": "斗六市",
+    "discount": "請洽店家或內部公告"
+  },
+  {
+    "category": "food",
+    "name": "Mr. Steak 史堤克牛排",
+    "location": "員林市",
+    "discount": "請洽店家或內部公告"
+  },
+  {
+    "category": "food",
+    "name": "薔薇派",
+    "location": "台中市",
+    "discount": "請洽店家或內部公告"
+  },
+  {
+    "category": "food",
+    "name": "先麥食品",
+    "location": "台中市",
+    "discount": "請洽店家或內部公告"
+  },
+  {
+    "category": "food",
+    "name": "陶板屋",
+    "location": "彰化市",
+    "discount": "彰化店"
+  },
+  {
+    "category": "food",
+    "name": "福華大飯店",
+    "location": "台中市",
+    "discount": "請洽店家或內部公告"
+  },
+  {
+    "category": "food",
+    "name": "怡園婚宴會館",
+    "location": "彰化市",
+    "discount": "請洽店家或內部公告"
+  },
+  {
+    "category": "food",
+    "name": "烤狀猿日式燒肉",
+    "location": "台中市、彰化縣",
+    "discount": "請洽店家或內部公告"
+  },
+  {
+    "category": "food",
+    "name": "椰香天堂泰式料理餐廳",
+    "location": "斗六市、虎尾鎮",
+    "discount": "請洽店家或內部公告"
+  },
+  {
+    "category": "food",
+    "name": "Haru日式手作燒餃子鋪",
+    "location": "員林市",
+    "discount": "請洽店家或內部公告"
+  },
+  {
+    "category": "food",
+    "name": "阿杜皇家泰式料理",
+    "location": "員林市",
+    "discount": "請洽店家或內部公告"
+  },
+  {
+    "category": "food",
+    "name": "必勝客",
+    "location": "花壇鄉",
+    "discount": "外送服務"
+  },
+  {
+    "category": "food",
+    "name": "熙舍咖啡",
+    "location": "員林市",
+    "discount": "請洽店家或內部公告"
+  },
+  {
+    "category": "food",
+    "name": "涮乃葉",
+    "location": "台中市",
+    "discount": "台中大遠百店"
+  },
+  {
+    "category": "food",
+    "name": "米蘭街義式小館",
+    "location": "員林市",
+    "discount": "員林店"
+  },
+  {
+    "category": "food",
+    "name": "天利食堂",
+    "location": "全台",
+    "discount": "請洽店家或內部公告"
+  },
+  {
+    "category": "food",
+    "name": "NU-PASTA",
+    "location": "全台",
+    "discount": "請洽店家或內部公告"
+  },
+  {
+    "category": "food",
+    "name": "大黑松小倆口",
+    "location": "全台",
+    "discount": "請洽店家或內部公告"
+  },
+  {
+    "category": "food",
+    "name": "好室鍋物",
+    "location": "員林市",
+    "discount": "請洽店家或內部公告"
+  },
+  {
+    "category": "food",
+    "name": "鍋台銘連鎖時尚湯鍋",
+    "location": "員林市",
+    "discount": "員林店"
+  },
+  {
+    "category": "food",
+    "name": "7-11 行動隨時取咖啡企業專案",
+    "location": "全台",
+    "discount": "請洽店家或內部公告"
+  },
+  {
+    "category": "food",
+    "name": "東瓦燒肉",
+    "location": "員林市",
+    "discount": "原燒肉黨"
+  },
+  {
+    "category": "food",
+    "name": "TASTY西堤牛排",
+    "location": "埔心鄉",
+    "discount": "員林大潤發店"
+  },
+  {
+    "category": "food",
+    "name": "YOLO MOMENT 樂食休閒館",
+    "location": "彰化市、台中市",
+    "discount": "請洽店家或內部公告"
+  },
+  {
+    "category": "food",
+    "name": "蘑菇部落休閒農場",
+    "location": "埔心鄉",
+    "discount": "請洽店家或內部公告"
+  },
+  {
+    "category": "food",
+    "name": "赤腳精靈餐廳",
+    "location": "南投市",
+    "discount": "請洽店家或內部公告"
+  },
+  {
+    "category": "food",
+    "name": "85度C",
+    "location": "員林市",
+    "discount": "請洽店家或內部公告"
+  },
+  {
+    "category": "food",
+    "name": "甜入心菲",
+    "location": "員林市",
+    "discount": "請洽店家或內部公告"
+  },
+  {
+    "category": "food",
+    "name": "85度C",
+    "location": "大村鄉",
+    "discount": "請洽店家或內部公告"
+  },
+  {
+    "category": "food",
+    "name": "Mr. Wish飲料",
+    "location": "員林市",
+    "discount": "崇實店"
+  },
+  {
+    "category": "food",
+    "name": "養鍋",
+    "location": "員林市",
+    "discount": "請洽店家或內部公告"
+  },
+  {
+    "category": "food",
+    "name": "路易莎",
+    "location": "員林市",
+    "discount": "員林中山門市"
+  },
+  {
+    "category": "food",
+    "name": "联亭泡菜鍋",
+    "location": "員林市",
+    "discount": "請洽店家或內部公告"
+  },
+  {
+    "category": "food",
+    "name": "官東燒肉",
+    "location": "員林市",
+    "discount": "請洽店家或內部公告"
+  },
+  {
+    "category": "food",
+    "name": "原食煮藝",
+    "location": "斗六市",
+    "discount": "請洽店家或內部公告"
+  },
+  {
+    "category": "food",
+    "name": "燒瓶子。大肆の鍋",
+    "location": "全台",
+    "discount": "請洽店家或內部公告"
+  },
+  {
+    "category": "food",
+    "name": "小蒙牛",
+    "location": "全台",
+    "discount": "請洽店家或內部公告"
+  },
+  {
+    "category": "food",
+    "name": "虎豆咖啡館",
+    "location": "大村鄉",
+    "discount": "請洽店家或內部公告"
+  },
+  {
+    "category": "food",
+    "name": "赤鬼炙燒牛排",
+    "location": "全台",
+    "discount": "請洽店家或內部公告"
+  },
+  {
+    "category": "food",
+    "name": "萬八鍋物",
+    "location": "北斗鎮",
+    "discount": "請洽店家或內部公告"
+  },
+  {
+    "category": "food",
+    "name": "異人館餐飲",
+    "location": "全台",
+    "discount": "請洽店家或內部公告"
+  },
+  {
+    "category": "food",
+    "name": "上皇苑港式飲茶餐廳",
+    "location": "員林市",
+    "discount": "請洽店家或內部公告"
+  },
+  {
+    "category": "food",
+    "name": "江鳥咖啡",
+    "location": "斗六市",
+    "discount": "請洽店家或內部公告"
+  },
+  {
+    "category": "food",
+    "name": "涮乃葉",
+    "location": "斗六市",
+    "discount": "斗六家樂福分店"
+  },
+  {
+    "category": "food",
+    "name": "隱鍋",
+    "location": "員林市",
+    "discount": "員林大道旗艦店"
+  },
+  {
+    "category": "food",
+    "name": "烓米燒肉",
+    "location": "員林市",
+    "discount": "請洽店家或內部公告"
+  },
+  {
+    "category": "food",
+    "name": "普吉島泰緬餐廳",
+    "location": "彰化市",
+    "discount": "請洽店家或內部公告"
+  },
+  {
+    "category": "food",
+    "name": "家園排餐館",
+    "location": "北斗鎮",
+    "discount": "請洽店家或內部公告"
+  },
+  {
+    "category": "food",
+    "name": "海總派對",
+    "location": "員林市",
+    "discount": "員林旗艦店"
+  },
+  {
+    "category": "food",
+    "name": "夏帕義大利麵",
+    "location": "全台",
+    "discount": "請洽店家或內部公告"
+  },
+  {
+    "category": "food",
+    "name": "路易莎",
+    "location": "員林市",
+    "discount": "員林大同門市"
+  },
+  {
+    "category": "food",
+    "name": "嗨咿迴轉火鍋",
+    "location": "斗六市、高雄市",
+    "discount": "請洽店家或內部公告"
+  },
+  {
+    "category": "food",
+    "name": "圓砌鴛鴦升降鍋物",
+    "location": "斗六市、高雄市",
+    "discount": "請洽店家或內部公告"
+  },
+  {
+    "category": "food",
+    "name": "85度C",
+    "location": "員林市",
+    "discount": "員集店"
+  },
+  {
+    "category": "food",
+    "name": "小胖鮮鍋",
+    "location": "全台",
+    "discount": "請洽店家或內部公告"
+  },
+  {
+    "category": "food",
+    "name": "野火鹹酥雞",
+    "location": "斗六市",
+    "discount": "請洽店家或內部公告"
+  },
+  {
+    "category": "food",
+    "name": "涓豆腐",
+    "location": "全台",
+    "discount": "請洽店家或內部公告"
+  },
+  {
+    "category": "food",
+    "name": "火鍋世家",
+    "location": "虎尾鎮、斗六市、嘉義市",
+    "discount": "請洽店家或內部公告"
+  },
+  {
+    "category": "food",
+    "name": "饗食天堂/果然匯/開飯川食堂/饗泰多/真珠/小福利麻辣鍋",
+    "location": "全台",
+    "discount": "請洽店家或內部公告"
+  },
+  {
+    "category": "food",
+    "name": "喜布泰式鍋物銅盤燒烤",
+    "location": "員林市",
+    "discount": "請洽店家或內部公告"
+  },
+  {
+    "category": "food",
+    "name": "紅港紅茶",
+    "location": "員林市",
+    "discount": "請洽店家或內部公告"
+  },
+  {
+    "category": "food",
+    "name": "五鮮級",
+    "location": "全台",
+    "discount": "請洽店家或內部公告"
+  },
+  {
+    "category": "food",
+    "name": "北村豆腐家",
+    "location": "全台",
+    "discount": "請洽店家或內部公告"
+  },
+  {
+    "category": "food",
+    "name": "龜記茗品",
+    "location": "全台",
+    "discount": "請洽店家或內部公告"
+  },
+  {
+    "category": "food",
+    "name": "DeerHer甜點廚坊",
+    "location": "和美鎮",
+    "discount": "請洽店家或內部公告"
+  },
+  {
+    "category": "food",
+    "name": "姜滿堂正宗韓國直火燒肉",
+    "location": "全台",
+    "discount": "請洽店家或內部公告"
+  },
+  {
+    "category": "food",
+    "name": "帕泰家泰式料理",
+    "location": "全台",
+    "discount": "請洽店家或內部公告"
+  },
+  {
+    "category": "food",
+    "name": "十盛奶茶專賣",
+    "location": "彰化市",
+    "discount": "請洽店家或內部公告"
+  },
+  {
+    "category": "food",
+    "name": "海村澎湖活海鮮",
+    "location": "斗六市",
+    "discount": "請洽店家或內部公告"
+  },
+  {
+    "category": "food",
+    "name": "Mr. Steak 史堤克牛排",
+    "location": "斗六市",
+    "discount": "請洽店家或內部公告"
+  },
+  {
+    "category": "food",
+    "name": "貢拋seafood",
+    "location": "台中市",
+    "discount": "泰式海鮮餐廳"
+  },
+  {
+    "category": "food",
+    "name": "丹鹿和風餐食館",
+    "location": "斗六市",
+    "discount": "請洽店家或內部公告"
+  },
+  {
+    "category": "food",
+    "name": "Helo Café",
+    "location": "員林市",
+    "discount": "請洽店家或內部公告"
+  },
+  {
+    "category": "food",
+    "name": "色鼎日式炭火燒肉店",
+    "location": "斗六市",
+    "discount": "請洽店家或內部公告"
+  },
+  {
+    "category": "food",
+    "name": "食堂小館",
+    "location": "彰化市",
+    "discount": "請洽店家或內部公告"
+  },
+  {
+    "category": "food",
+    "name": "多那之",
+    "location": "員林市",
+    "discount": "員林大道門市"
+  },
+  {
+    "category": "food",
+    "name": "色鼎燒肉餐飲店",
+    "location": "員林市",
+    "discount": "請洽店家或內部公告"
+  },
+  {
+    "category": "food",
+    "name": "恐龍小姐有限公司",
+    "location": "斗六市",
+    "discount": "請洽店家或內部公告"
+  },
+  {
+    "category": "food",
+    "name": "山本牛排",
+    "location": "斗六市",
+    "discount": "請洽店家或內部公告"
+  },
+  {
+    "category": "food",
+    "name": "饗點鍋精緻鍋物",
+    "location": "員林市",
+    "discount": "彰化員林店"
+  },
+  {
+    "category": "food",
+    "name": "上大牛排",
+    "location": "員林市",
+    "discount": "請洽店家或內部公告"
+  },
+  {
+    "category": "food",
+    "name": "員林黃家雞腳凍",
+    "location": "員林市",
+    "discount": "請洽店家或內部公告"
+  },
+  {
+    "category": "leisure",
+    "name": "昇財麗禧酒店",
+    "location": "員林市",
+    "discount": "請洽店家或內部公告"
+  },
+  {
+    "category": "leisure",
+    "name": "好樂迪KTV",
+    "location": "彰化市",
+    "discount": "請洽店家或內部公告"
+  },
+  {
+    "category": "leisure",
+    "name": "員林游泳池",
+    "location": "員林市",
+    "discount": "請洽店家或內部公告"
+  },
+  {
+    "category": "leisure",
+    "name": "台中裕元花園酒店",
+    "location": "台中市",
+    "discount": "請洽店家或內部公告"
+  },
+  {
+    "category": "leisure",
+    "name": "華安大飯店",
+    "location": "斗六市",
+    "discount": "請洽店家或內部公告"
+  },
+  {
+    "category": "leisure",
+    "name": "麗翔酒店連鎖",
+    "location": "宜蘭縣",
+    "discount": "礁溪館"
+  },
+  {
+    "category": "leisure",
+    "name": "溪頭米堤大飯店",
+    "location": "南投縣",
+    "discount": "請洽店家或內部公告"
+  },
+  {
+    "category": "leisure",
+    "name": "諾富特華航桃園機場飯店",
+    "location": "桃園市",
+    "discount": "請洽店家或內部公告"
+  },
+  {
+    "category": "leisure",
+    "name": "雄獅旅行社",
+    "location": "台中市",
+    "discount": "請洽店家或內部公告"
+  },
+  {
+    "category": "leisure",
+    "name": "華山觀止",
+    "location": "雲林縣",
+    "discount": "請洽店家或內部公告"
+  },
+  {
+    "category": "leisure",
+    "name": "台中日月千禧酒店",
+    "location": "台中市",
+    "discount": "請洽店家或內部公告"
+  },
+  {
+    "category": "leisure",
+    "name": "夢時代購物中心",
+    "location": "高雄市",
+    "discount": "請洽店家或內部公告"
+  },
+  {
+    "category": "leisure",
+    "name": "大贏家保齡球館",
+    "location": "大村鄉",
+    "discount": "請洽店家或內部公告"
+  },
+  {
+    "category": "leisure",
+    "name": "福華大飯店",
+    "location": "台中市",
+    "discount": "請洽店家或內部公告"
+  },
+  {
+    "category": "leisure",
+    "name": "福泰商務飯店",
+    "location": "彰化巿",
+    "discount": "請洽店家或內部公告"
+  },
+  {
+    "category": "leisure",
+    "name": "六福村",
+    "location": "新竹縣",
+    "discount": "請洽店家或內部公告"
+  },
+  {
+    "category": "leisure",
+    "name": "喜鴻(綜合)旅行社",
+    "location": "網路",
+    "discount": "請洽店家或內部公告"
+  },
+  {
+    "category": "leisure",
+    "name": "小人國主題樂園",
+    "location": "桃園市",
+    "discount": "請洽店家或內部公告"
+  },
+  {
+    "category": "leisure",
+    "name": "員林商務旅館",
+    "location": "員林市",
+    "discount": "請洽店家或內部公告"
+  },
+  {
+    "category": "leisure",
+    "name": "南仁湖育樂股份有限公司",
+    "location": "雲林縣、台中市、新竹縣、桃園市、台南市、屏東縣",
+    "discount": "請洽店家或內部公告"
+  },
+  {
+    "category": "leisure",
+    "name": "晨陽文旅",
+    "location": "員林市",
+    "discount": "請洽店家或內部公告"
+  },
+  {
+    "category": "leisure",
+    "name": "墾丁小丑魚度假村",
+    "location": "墾丁",
+    "discount": "請洽店家或內部公告"
+  },
+  {
+    "category": "leisure",
+    "name": "花蓮新鶴民宿",
+    "location": "花蓮縣",
+    "discount": "請洽店家或內部公告"
+  },
+  {
+    "category": "leisure",
+    "name": "昇恆昌金湖大飯店",
+    "location": "金門縣",
+    "discount": "請洽店家或內部公告"
+  },
+  {
+    "category": "leisure",
+    "name": "桃花園飯店",
+    "location": "桃園市",
+    "discount": "請洽店家或內部公告"
+  },
+  {
+    "category": "leisure",
+    "name": "通豪大飯店",
+    "location": "台中市",
+    "discount": "請洽店家或內部公告"
+  },
+  {
+    "category": "leisure",
+    "name": "晶悅國際飯店",
+    "location": "桃園市",
+    "discount": "請洽店家或內部公告"
+  },
+  {
+    "category": "leisure",
+    "name": "台南老爺行旅",
+    "location": "台南市",
+    "discount": "請洽店家或內部公告"
+  },
+  {
+    "category": "leisure",
+    "name": "南方莊園",
+    "location": "桃園市",
+    "discount": "請洽店家或內部公告"
+  },
+  {
+    "category": "leisure",
+    "name": "星享道飯店",
+    "location": "台中市",
+    "discount": "請洽店家或內部公告"
+  },
+  {
+    "category": "leisure",
+    "name": "文華道飯店",
+    "location": "台中市",
+    "discount": "請洽店家或內部公告"
+  },
+  {
+    "category": "leisure",
+    "name": "旗津道飯店",
+    "location": "高雄市",
+    "discount": "請洽店家或內部公告"
+  },
+  {
+    "category": "leisure",
+    "name": "溪湖小型賽車訓練場",
+    "location": "溪湖鎮",
+    "discount": "請洽店家或內部公告"
+  },
+  {
+    "category": "leisure",
+    "name": "天韻旅館集團",
+    "location": "台中市、南投縣",
+    "discount": "請洽店家或內部公告"
+  },
+  {
+    "category": "leisure",
+    "name": "福容大飯店",
+    "location": "全省",
+    "discount": "請洽店家或內部公告"
+  },
+  {
+    "category": "leisure",
+    "name": "宏都金殿大飯店",
+    "location": "台北市",
+    "discount": "請洽店家或內部公告"
+  },
+  {
+    "category": "leisure",
+    "name": "悅川酒店",
+    "location": "宜蘭縣",
+    "discount": "請洽店家或內部公告"
+  },
+  {
+    "category": "leisure",
+    "name": "清新溫泉飯店",
+    "location": "台中市",
+    "discount": "請洽店家或內部公告"
+  },
+  {
+    "category": "leisure",
+    "name": "北投麗禧溫泉酒店",
+    "location": "台北市",
+    "discount": "請洽店家或內部公告"
+  },
+  {
+    "category": "leisure",
+    "name": "日光花園商務飯店Sun Hotel",
+    "location": "高雄市",
+    "discount": "請洽店家或內部公告"
+  },
+  {
+    "category": "leisure",
+    "name": "高雄85大樓君鴻國際酒店",
+    "location": "高雄市",
+    "discount": "請洽店家或內部公告"
+  },
+  {
+    "category": "leisure",
+    "name": "長榮桂冠酒店",
+    "location": "台中市",
+    "discount": "請洽店家或內部公告"
+  },
+  {
+    "category": "leisure",
+    "name": "兄弟大飯店",
+    "location": "台北市",
+    "discount": "請洽店家或內部公告"
+  },
+  {
+    "category": "leisure",
+    "name": "義大遊樂世界/購物廣場",
+    "location": "高雄市",
+    "discount": "請洽店家或內部公告"
+  },
+  {
+    "category": "leisure",
+    "name": "魔菇部落休閒農場",
+    "location": "彰化縣",
+    "discount": "請洽店家或內部公告"
+  },
+  {
+    "category": "leisure",
+    "name": "丹迪旅店",
+    "location": "台北市",
+    "discount": "請洽店家或內部公告"
+  },
+  {
+    "category": "leisure",
+    "name": "伯達行旅",
+    "location": "台中市",
+    "discount": "請洽店家或內部公告"
+  },
+  {
+    "category": "leisure",
+    "name": "義大皇家酒店",
+    "location": "高雄市",
+    "discount": "請洽店家或內部公告"
+  },
+  {
+    "category": "leisure",
+    "name": "雷沐",
+    "location": "員林市",
+    "discount": "請洽店家或內部公告"
+  },
+  {
+    "category": "leisure",
+    "name": "頭等艙飯店",
+    "location": "高雄市",
+    "discount": "請洽店家或內部公告"
+  },
+  {
+    "category": "leisure",
+    "name": "皇家季節酒店",
+    "location": "台中市",
+    "discount": "請洽店家或內部公告"
+  },
+  {
+    "category": "leisure",
+    "name": "劍湖山王子大飯店",
+    "location": "雲林縣",
+    "discount": "請洽店家或內部公告"
+  },
+  {
+    "category": "leisure",
+    "name": "凱擘影城",
+    "location": "台中市",
+    "discount": "大魯閣新時代"
+  },
+  {
+    "category": "leisure",
+    "name": "武陵農場",
+    "location": "台中市",
+    "discount": "請洽店家或內部公告"
+  },
+  {
+    "category": "leisure",
+    "name": "可樂旅遊",
+    "location": "網路",
+    "discount": "請洽店家或內部公告"
+  },
+  {
+    "category": "leisure",
+    "name": "西子灣大飯店 - 站前館",
+    "location": "高雄市",
+    "discount": "請洽店家或內部公告"
+  },
+  {
+    "category": "leisure",
+    "name": "奇異果快捷旅店",
+    "location": "全省",
+    "discount": "請洽店家或內部公告"
+  },
+  {
+    "category": "leisure",
+    "name": "賓王時尚旅店",
+    "location": "台北市",
+    "discount": "請洽店家或內部公告"
+  },
+  {
+    "category": "leisure",
+    "name": "音樂世界旅邸",
+    "location": "台中市",
+    "discount": "請洽店家或內部公告"
+  },
+  {
+    "category": "leisure",
+    "name": "西子灣大飯店 - 愛河館",
+    "location": "高雄市",
+    "discount": "請洽店家或內部公告"
+  },
+  {
+    "category": "leisure",
+    "name": "奧美伽健身會館",
+    "location": "員林市",
+    "discount": "請洽店家或內部公告"
+  },
+  {
+    "category": "leisure",
+    "name": "月見溪行館",
+    "location": "台南市",
+    "discount": "請洽店家或內部公告"
+  },
+  {
+    "category": "leisure",
+    "name": "沐楓商旅",
+    "location": "桃園市",
+    "discount": "請洽店家或內部公告"
+  },
+  {
+    "category": "leisure",
+    "name": "九族文化村",
+    "location": "南投縣",
+    "discount": "請洽店家或內部公告"
+  },
+  {
+    "category": "leisure",
+    "name": "台中港酒店",
+    "location": "台中市",
+    "discount": "請洽店家或內部公告"
+  },
+  {
+    "category": "leisure",
+    "name": "騎士堡",
+    "location": "全省",
+    "discount": "請洽店家或內部公告"
+  },
+  {
+    "category": "leisure",
+    "name": "夏都沙灘酒店",
+    "location": "墾丁",
+    "discount": "請洽店家或內部公告"
+  },
+  {
+    "category": "leisure",
+    "name": "夏都城旅",
+    "location": "台南市",
+    "discount": "請洽店家或內部公告"
+  },
+  {
+    "category": "leisure",
+    "name": "泰安觀止",
+    "location": "苗栗縣",
+    "discount": "請洽店家或內部公告"
+  },
+  {
+    "category": "leisure",
+    "name": "逢甲商旅",
+    "location": "台中市",
+    "discount": "請洽店家或內部公告"
+  },
+  {
+    "category": "leisure",
+    "name": "日月潭雲品溫泉酒店",
+    "location": "南投縣",
+    "discount": "請洽店家或內部公告"
+  },
+  {
+    "category": "leisure",
+    "name": "虎尾春秋設計文創旅店",
+    "location": "雲林縣",
+    "discount": "請洽店家或內部公告"
+  },
+  {
+    "category": "leisure",
+    "name": "中天溫泉渡假飯店",
+    "location": "宜蘭縣",
+    "discount": "請洽店家或內部公告"
+  },
+  {
+    "category": "leisure",
+    "name": "亞樂健身",
+    "location": "彰化市",
+    "discount": "請洽店家或內部公告"
+  },
+  {
+    "category": "leisure",
+    "name": "逗點旅店",
+    "location": "台中市",
+    "discount": "請洽店家或內部公告"
+  },
+  {
+    "category": "leisure",
+    "name": "名人堂花園大飯店",
+    "location": "桃園市",
+    "discount": "請洽店家或內部公告"
+  },
+  {
+    "category": "leisure",
+    "name": "和逸飯店",
+    "location": "台北市、桃園市、台南市、高雄市",
+    "discount": "請洽店家或內部公告"
+  },
+  {
+    "category": "leisure",
+    "name": "琉璃仙境",
+    "location": "員林市",
+    "discount": "請洽店家或內部公告"
+  },
+  {
+    "category": "leisure",
+    "name": "林酒店",
+    "location": "台中市",
+    "discount": "請洽店家或內部公告"
+  },
+  {
+    "category": "leisure",
+    "name": "木棉道。美學商旅",
+    "location": "宜蘭縣",
+    "discount": "請洽店家或內部公告"
+  },
+  {
+    "category": "leisure",
+    "name": "凱旋酒店",
+    "location": "台北市",
+    "discount": "請洽店家或內部公告"
+  },
+  {
+    "category": "leisure",
+    "name": "臺北希爾頓逸林酒店",
+    "location": "台北市",
+    "discount": "請洽店家或內部公告"
+  },
+  {
+    "category": "leisure",
+    "name": "麗翔酒店連鎖",
+    "location": "花蓮縣",
+    "discount": "花蓮館"
+  },
+  {
+    "category": "leisure",
+    "name": "旅居文旅",
+    "location": "新北市、台北市、桃園市、高雄市",
+    "discount": "請洽店家或內部公告"
+  },
+  {
+    "category": "leisure",
+    "name": "夏都富朗酒店",
+    "location": "台南市",
+    "discount": "請洽店家或內部公告"
+  },
+  {
+    "category": "leisure",
+    "name": "綠世界生態農場",
+    "location": "新竹縣",
+    "discount": "請洽店家或內部公告"
+  },
+  {
+    "category": "leisure",
+    "name": "amba意舍酒店",
+    "location": "台北市",
+    "discount": "松山&西門町"
+  },
+  {
+    "category": "leisure",
+    "name": "彰南國民運動中心",
+    "location": "彰化縣",
+    "discount": "請洽店家或內部公告"
+  },
+  {
+    "category": "leisure",
+    "name": "IHG洲際酒店集團",
+    "location": "全台",
+    "discount": "請洽店家或內部公告"
+  },
+  {
+    "category": "leisure",
+    "name": "和苑三井花園飯店",
+    "location": "台北市",
+    "discount": "請洽店家或內部公告"
+  },
+  {
+    "category": "leisure",
+    "name": "大板根森林溫泉酒店",
+    "location": "新北市",
+    "discount": "請洽店家或內部公告"
+  },
+  {
+    "category": "leisure",
+    "name": "承億文旅",
+    "location": "全省",
+    "discount": "請洽店家或內部公告"
+  },
+  {
+    "category": "leisure",
+    "name": "全方位運動休閒中心",
+    "location": "員林市",
+    "discount": "請洽店家或內部公告"
+  },
+  {
+    "category": "leisure",
+    "name": "桃園國際機場凱悅酒店",
+    "location": "桃園市",
+    "discount": "請洽店家或內部公告"
+  },
+  {
+    "category": "leisure",
+    "name": "理想大地渡假飯店",
+    "location": "花蓮縣",
+    "discount": "請洽店家或內部公告"
+  },
+  {
+    "category": "leisure",
+    "name": "娜路彎大酒店",
+    "location": "台東市",
+    "discount": "請洽店家或內部公告"
+  },
+  {
+    "category": "leisure",
+    "name": "麗京棧酒店",
+    "location": "新北市",
+    "discount": "請洽店家或內部公告"
+  },
+  {
+    "category": "leisure",
+    "name": "誠品行旅",
+    "location": "台北市",
+    "discount": "請洽店家或內部公告"
+  },
+  {
+    "category": "leisure",
+    "name": "統一渡假村集團",
+    "location": "新竹縣、台中市、屏東縣",
+    "discount": "請洽店家或內部公告"
+  },
+  {
+    "category": "leisure",
+    "name": "頑皮世界",
+    "location": "台南市",
+    "discount": "請洽店家或內部公告"
+  },
+  {
+    "category": "leisure",
+    "name": "春不荖足湯、不老松足湯、足松、勁桑元氣按摩",
+    "location": "全台",
+    "discount": "請洽店家或內部公告"
+  },
+  {
+    "category": "leisure",
+    "name": "享得道飯店",
+    "location": "台中市",
+    "discount": "請洽店家或內部公告"
+  },
+  {
+    "category": "leisure",
+    "name": "羽澤足體養生行館",
+    "location": "員林市",
+    "discount": "請洽店家或內部公告"
+  },
+  {
+    "category": "leisure",
+    "name": "城市商旅、德立莊、HOTEL PAPA WHALE",
+    "location": "全台",
+    "discount": "請洽店家或內部公告"
+  },
+  {
+    "category": "leisure",
+    "name": "捷絲旅",
+    "location": "高雄市、花蓮縣",
+    "discount": "請洽店家或內部公告"
+  },
+  {
+    "category": "leisure",
+    "name": "蘊泉庄溫泉渡假飯店",
+    "location": "新北市",
+    "discount": "請洽店家或內部公告"
+  },
+  {
+    "category": "leisure",
+    "name": "喜瑞、丹迪旅店、新驛旅店",
+    "location": "台北市、台中市",
+    "discount": "請洽店家或內部公告"
+  },
+  {
+    "category": "leisure",
+    "name": "雀客旅館、承攜行旅、同一大飯店、拓程商旅、礁溪麒麟酒店、永豐棧酒店",
+    "location": "全省",
+    "discount": "請洽店家或內部公告"
+  },
+  {
+    "category": "leisure",
+    "name": "康橋連鎖旅館",
+    "location": "全台",
+    "discount": "請洽店家或內部公告"
+  },
+  {
+    "category": "leisure",
+    "name": "墾丁福華渡假飯店",
+    "location": "屏東縣",
+    "discount": "請洽店家或內部公告"
+  },
+  {
+    "category": "leisure",
+    "name": "新女人心身心靈SPA",
+    "location": "斗六市",
+    "discount": "請洽店家或內部公告"
+  },
+  {
+    "category": "leisure",
+    "name": "超級巨星自助式KTV",
+    "location": "全台",
+    "discount": "請洽店家或內部公告"
+  },
+  {
+    "category": "leisure",
+    "name": "漢來大飯店",
+    "location": "台北市",
+    "discount": "請洽店家或內部公告"
+  },
+  {
+    "category": "leisure",
+    "name": "麗寶樂園度假區",
+    "location": "台中市",
+    "discount": "請洽店家或內部公告"
+  },
+  {
+    "category": "leisure",
+    "name": "馥御花園酒店",
+    "location": "田中鎮",
+    "discount": "請洽店家或內部公告"
+  },
+  {
+    "category": "leisure",
+    "name": "阿里山賓館",
+    "location": "嘉義縣",
+    "discount": "請洽店家或內部公告"
+  },
+  {
+    "category": "leisure",
+    "name": "九九峰動物樂園",
+    "location": "南投縣",
+    "discount": "請洽店家或內部公告"
+  },
+  {
+    "category": "leisure",
+    "name": "台北六福萬怡酒店",
+    "location": "台北市",
+    "discount": "請洽店家或內部公告"
+  },
+  {
+    "category": "leisure",
+    "name": "遠雄海洋公園",
+    "location": "花蓮縣",
+    "discount": "請洽店家或內部公告"
+  },
+  {
+    "category": "leisure",
+    "name": "晶盈親旅大酒店",
+    "location": "台南市",
+    "discount": "請洽店家或內部公告"
+  },
+  {
+    "category": "leisure",
+    "name": "好樂迪KTV",
+    "location": "斗六市",
+    "discount": "請洽店家或內部公告"
+  },
+  {
+    "category": "leisure",
+    "name": "塔木德酒店",
+    "location": "全台",
+    "discount": "請洽店家或內部公告"
+  },
+  {
+    "category": "leisure",
+    "name": "和逸飯店",
+    "location": "台北市",
+    "discount": "台北忠孝館"
+  },
+  {
+    "category": "leisure",
+    "name": "華宿文旅",
+    "location": "彰化市",
+    "discount": "請洽店家或內部公告"
+  },
+  {
+    "category": "leisure",
+    "name": "歐華酒店",
+    "location": "台北市",
+    "discount": "請洽店家或內部公告"
+  },
+  {
+    "category": "leisure",
+    "name": "順天環匯酒店",
+    "location": "台中市",
+    "discount": "請洽店家或內部公告"
+  },
+  {
+    "category": "leisure",
+    "name": "好樂迪KTV",
+    "location": "員林市",
+    "discount": "請洽店家或內部公告"
+  },
+  {
+    "category": "leisure",
+    "name": "金典酒店",
+    "location": "台中市",
+    "discount": "請洽店家或內部公告"
+  },
+  {
+    "category": "leisure",
+    "name": "同心羽球館",
+    "location": "花壇鄉",
+    "discount": "請洽店家或內部公告"
+  },
+  {
+    "category": "leisure",
+    "name": "台中勤美洲際酒店",
+    "location": "台中市",
+    "discount": "請洽店家或內部公告"
+  },
+  {
+    "category": "leisure",
+    "name": "家美瑞品酒店",
+    "location": "台北市",
+    "discount": "請洽店家或內部公告"
+  },
+  {
+    "category": "leisure",
+    "name": "福泰飯店集團",
+    "location": "全台",
+    "discount": "請洽店家或內部公告"
+  },
+  {
+    "category": "leisure",
+    "name": "自行車文化探索館",
+    "location": "台中市",
+    "discount": "請洽店家或內部公告"
+  },
+  {
+    "category": "leisure",
+    "name": "墾丁凱撒大飯店",
+    "location": "屏東縣",
+    "discount": "請洽店家或內部公告"
+  },
+  {
+    "category": "leisure",
+    "name": "IHG洲際集團",
+    "location": "全球",
+    "discount": "請洽店家或內部公告"
+  },
+  {
+    "category": "leisure",
+    "name": "緻麗伯爵酒店",
+    "location": "斗六市",
+    "discount": "請洽店家或內部公告"
+  },
+  {
+    "category": "leisure",
+    "name": "溪頭福華渡假飯店",
+    "location": "南投縣",
+    "discount": "請洽店家或內部公告"
+  },
+  {
+    "category": "leisure",
+    "name": "石門水庫福華渡假飯店",
+    "location": "桃園市",
+    "discount": "請洽店家或內部公告"
+  },
+  {
+    "category": "daily",
+    "name": "承明眼鏡",
+    "location": "員林市",
+    "discount": "請洽店家或內部公告"
+  },
+  {
+    "category": "daily",
+    "name": "福友傢俱",
+    "location": "員林市",
+    "discount": "請洽店家或內部公告"
+  },
+  {
+    "category": "daily",
+    "name": "來來皮件專賣店",
+    "location": "員林市",
+    "discount": "請洽店家或內部公告"
+  },
+  {
+    "category": "daily",
+    "name": "歐德國際傢俱有限公司",
+    "location": "全省",
+    "discount": "請洽店家或內部公告"
+  },
+  {
+    "category": "daily",
+    "name": "金獅造型傢俱",
+    "location": "員林市",
+    "discount": "請洽店家或內部公告"
+  },
+  {
+    "category": "daily",
+    "name": "易桓運動用品社",
+    "location": "員林市",
+    "discount": "請洽店家或內部公告"
+  },
+  {
+    "category": "daily",
+    "name": "得恩堂眼鏡",
+    "location": "員林市",
+    "discount": "請洽店家或內部公告"
+  },
+  {
+    "category": "daily",
+    "name": "展望眼鏡公司",
+    "location": "員林市",
+    "discount": "請洽店家或內部公告"
+  },
+  {
+    "category": "daily",
+    "name": "金特麗眼鏡公司",
+    "location": "彰化市",
+    "discount": "請洽店家或內部公告"
+  },
+  {
+    "category": "daily",
+    "name": "昭新企業有限公司",
+    "location": "新北市",
+    "discount": "請洽店家或內部公告"
+  },
+  {
+    "category": "daily",
+    "name": "佳仕奇有限公司",
+    "location": "台中市",
+    "discount": "請洽店家或內部公告"
+  },
+  {
+    "category": "daily",
+    "name": "建成體育用品專賣店",
+    "location": "永靖鄉",
+    "discount": "請洽店家或內部公告"
+  },
+  {
+    "category": "daily",
+    "name": "邁進健身館",
+    "location": "埔心鄉",
+    "discount": "請洽店家或內部公告"
+  },
+  {
+    "category": "daily",
+    "name": "東森購物",
+    "location": "網路",
+    "discount": "請洽店家或內部公告"
+  },
+  {
+    "category": "daily",
+    "name": "和淵衛浴(TOTO)",
+    "location": "員林市",
+    "discount": "請洽店家或內部公告"
+  },
+  {
+    "category": "daily",
+    "name": "I PRIMO 三民店",
+    "location": "台中市",
+    "discount": "請洽店家或內部公告"
+  },
+  {
+    "category": "daily",
+    "name": "NORMAN 夏沐蕾藝術窗飾",
+    "location": "台中市",
+    "discount": "請洽店家或內部公告"
+  },
+  {
+    "category": "daily",
+    "name": "東森購物",
+    "location": "全台",
+    "discount": "請洽店家或內部公告"
+  },
+  {
+    "category": "daily",
+    "name": "三久太陽能熱水器",
+    "location": "全台",
+    "discount": "請洽店家或內部公告"
+  },
+  {
+    "category": "daily",
+    "name": "翔晟企業社",
+    "location": "彰化市",
+    "discount": "請洽店家或內部公告"
+  },
+  {
+    "category": "daily",
+    "name": "白蘭氏",
+    "location": "網路",
+    "discount": "請洽店家或內部公告"
+  },
+  {
+    "category": "daily",
+    "name": "黛眼鏡館",
+    "location": "員林市",
+    "discount": "請洽店家或內部公告"
+  },
+  {
+    "category": "daily",
+    "name": "生活市集",
+    "location": "全台",
+    "discount": "請洽店家或內部公告"
+  },
+  {
+    "category": "daily",
+    "name": "HAPPYHAIR髮廊",
+    "location": "員林市",
+    "discount": "請洽店家或內部公告"
+  },
+  {
+    "category": "daily",
+    "name": "文雄眼鏡",
+    "location": "全台",
+    "discount": "請洽店家或內部公告"
+  },
+  {
+    "category": "daily",
+    "name": "1/3 A LIFE枕頭年終特賣會",
+    "location": "全台",
+    "discount": "請洽店家或內部公告"
+  },
+  {
+    "category": "daily",
+    "name": "國秀食材量販",
+    "location": "斗六市",
+    "discount": "請洽店家或內部公告"
+  },
+  {
+    "category": "daily",
+    "name": "鑫視麗眼鏡",
+    "location": "員林市",
+    "discount": "請洽店家或內部公告"
+  },
+  {
+    "category": "daily",
+    "name": "艾帝安全帽",
+    "location": "彰化市",
+    "discount": "請洽店家或內部公告"
+  },
+  {
+    "category": "daily",
+    "name": "超時代眼鏡館",
+    "location": "溪湖鎮",
+    "discount": "請洽店家或內部公告"
+  },
+  {
+    "category": "daily",
+    "name": "席伊麗床墊",
+    "location": "台中市",
+    "discount": "請洽店家或內部公告"
+  },
+  {
+    "category": "daily",
+    "name": "昌明眼鏡",
+    "location": "斗六市",
+    "discount": "請洽店家或內部公告"
+  },
+  {
+    "category": "daily",
+    "name": "欣霖企業有限公司",
+    "location": "員林市",
+    "discount": "請洽店家或內部公告"
+  },
+  {
+    "category": "daily",
+    "name": "台灣康匠製造股份有限公司",
+    "location": "全台",
+    "discount": "請洽店家或內部公告"
+  },
+  {
+    "category": "daily",
+    "name": "小茉莉流行服飾",
+    "location": "斗六市",
+    "discount": "請洽店家或內部公告"
+  },
+  {
+    "category": "learning",
+    "name": "地球村美日語",
+    "location": "全省",
+    "discount": "請洽店家或內部公告"
+  },
+  {
+    "category": "learning",
+    "name": "空中英語教室",
+    "location": "全台",
+    "discount": "請洽店家或內部公告"
+  },
+  {
+    "category": "learning",
+    "name": "TOEIC報名正新專屬平台",
+    "location": "全台",
+    "discount": "請洽店家或內部公告"
+  },
+  {
+    "category": "learning",
+    "name": "私立吉的堡中興幼兒園",
+    "location": "彰化市",
+    "discount": "請洽店家或內部公告"
+  },
+  {
+    "category": "learning",
+    "name": "維格幼兒園",
+    "location": "溪州鄉",
+    "discount": "請洽店家或內部公告"
+  },
+  {
+    "category": "learning",
+    "name": "巨匠美語",
+    "location": "員林市",
+    "discount": "員林分校"
+  },
+  {
+    "category": "learning",
+    "name": "大衛營幼兒園",
+    "location": "員林市",
+    "discount": "請洽店家或內部公告"
+  },
+  {
+    "category": "learning",
+    "name": "菁英文化事業股份有限公司",
+    "location": "網路",
+    "discount": "請洽店家或內部公告"
+  },
+  {
+    "category": "learning",
+    "name": "巨匠雲科技",
+    "location": "網路",
+    "discount": "請洽店家或內部公告"
+  },
+  {
+    "category": "learning",
+    "name": "TutorABC線上英語",
+    "location": "網路",
+    "discount": "請洽店家或內部公告"
+  },
+  {
+    "category": "learning",
+    "name": "救國團",
+    "location": "彰化.員林",
+    "discount": "請洽店家或內部公告"
+  },
+  {
+    "category": "learning",
+    "name": "救國團",
+    "location": "斗六市、虎尾鎮",
+    "discount": "請洽店家或內部公告"
+  },
+  {
+    "category": "learning",
+    "name": "尚進美日韓語",
+    "location": "線上課程",
+    "discount": "請洽店家或內部公告"
+  },
+  {
+    "category": "learning",
+    "name": "育光幼兒園",
+    "location": "彰化市、員林市",
+    "discount": "請洽店家或內部公告"
+  },
+  {
+    "category": "learning",
+    "name": "亞瑟國際幼兒園",
+    "location": "埔心鄉",
+    "discount": "請洽店家或內部公告"
+  },
+  {
+    "category": "learning",
+    "name": "哈羅蒙特梭利幼兒園",
+    "location": "花壇鄉",
+    "discount": "請洽店家或內部公告"
+  },
+  {
+    "category": "learning",
+    "name": "私立維多利亞幼兒園",
+    "location": "秀水鄉",
+    "discount": "請洽店家或內部公告"
+  },
+  {
+    "category": "learning",
+    "name": "私立九個果子幼兒園",
+    "location": "員林市",
+    "discount": "請洽店家或內部公告"
+  },
+  {
+    "category": "learning",
+    "name": "雲林縣私立來來幼兒園",
+    "location": "斗六市",
+    "discount": "請洽店家或內部公告"
+  },
+  {
+    "category": "learning",
+    "name": "巨匠電腦",
+    "location": "全台",
+    "discount": "請洽店家或內部公告"
+  },
+  {
+    "category": "moto",
+    "name": "家彬車業行",
+    "location": "員林市",
+    "discount": "機車行"
+  },
+  {
+    "category": "moto",
+    "name": "慶昇車業有限公司",
+    "location": "員林市",
+    "discount": "腳踏車行"
+  },
+  {
+    "category": "moto",
+    "name": "昶勝電動車行",
+    "location": "員林市",
+    "discount": "請洽店家或內部公告"
+  },
+  {
+    "category": "moto",
+    "name": "明鋒機車行",
+    "location": "員林市",
+    "discount": "請洽店家或內部公告"
+  },
+  {
+    "category": "moto",
+    "name": "玩家單車專賣店、生活館",
+    "location": "斗六市",
+    "discount": "請洽店家或內部公告"
+  },
+  {
+    "category": "moto",
+    "name": "CMC協力廠優惠購車辦法",
+    "location": "全台",
+    "discount": "請洽店家或內部公告"
+  },
+  {
+    "category": "moto",
+    "name": "祐昌重機車有限公司",
+    "location": "大村鄉",
+    "discount": "請洽店家或內部公告"
+  },
+  {
+    "category": "moto",
+    "name": "宇程機車行",
+    "location": "員林市",
+    "discount": "請洽店家或內部公告"
+  },
+  {
+    "category": "moto",
+    "name": "佰駒車業",
+    "location": "大村鄉",
+    "discount": "請洽店家或內部公告"
+  },
+  {
+    "category": "moto",
+    "name": "金茂祥商行",
+    "location": "員林市",
+    "discount": "請洽店家或內部公告"
+  },
+  {
+    "category": "moto",
+    "name": "台鈴機車優惠方案",
+    "location": "全台",
+    "discount": "請洽店家或內部公告"
+  },
+  {
+    "category": "moto",
+    "name": "光陽企業員工購車專案",
+    "location": "全台",
+    "discount": "請洽店家或內部公告"
+  },
+  {
+    "category": "moto",
+    "name": "光陽體系限時限量優惠購車專案",
+    "location": "全台",
+    "discount": "請洽店家或內部公告"
+  },
+  {
+    "category": "moto",
+    "name": "中華汽車eMOVING電動機車優惠方案",
+    "location": "全台",
+    "discount": "請洽店家或內部公告"
+  },
+  {
+    "category": "3c",
+    "name": "名冠電子專賣店",
+    "location": "員林市、和美鎮",
+    "discount": "請洽店家或內部公告"
+  },
+  {
+    "category": "3c",
+    "name": "員龍電腦資訊",
+    "location": "員林市",
+    "discount": "請洽店家或內部公告"
+  },
+  {
+    "category": "3c",
+    "name": "亞太電信WiFun",
+    "location": "全台",
+    "discount": "請洽店家或內部公告"
+  },
+  {
+    "category": "3c",
+    "name": "中華電信企客員眷方案",
+    "location": "全台",
+    "discount": "請洽店家或內部公告"
+  },
+  {
+    "category": "3c",
+    "name": "穩達資訊",
+    "location": "員林市",
+    "discount": "請洽店家或內部公告"
+  },
+  {
+    "category": "3c",
+    "name": "ASUS員林專賣店",
+    "location": "員林市",
+    "discount": "Zenfone"
+  },
+  {
+    "category": "3c",
+    "name": "短期活動 - 行動電源",
+    "location": "全台",
+    "discount": "請洽店家或內部公告"
+  },
+  {
+    "category": "3c",
+    "name": "Q哥3C",
+    "location": "全省",
+    "discount": "請洽店家或內部公告"
+  },
+  {
+    "category": "3c",
+    "name": "台灣大哥大企客員眷方案",
+    "location": "全台",
+    "discount": "請洽店家或內部公告"
+  },
+  {
+    "category": "3c",
+    "name": "遠傳企客員眷方案",
+    "location": "全台",
+    "discount": "請洽店家或內部公告"
+  },
+  {
+    "category": "car",
+    "name": "建強輪胎",
+    "location": "員林市",
+    "discount": "請洽店家或內部公告"
+  },
+  {
+    "category": "car",
+    "name": "新德昌汽車電機行",
+    "location": "大村鄉",
+    "discount": "請洽店家或內部公告"
+  },
+  {
+    "category": "car",
+    "name": "TOYOTA中部汽車所轄服務廠",
+    "location": "彰化縣",
+    "discount": "請洽店家或內部公告"
+  },
+  {
+    "category": "car",
+    "name": "汎達汽車",
+    "location": "彰化縣",
+    "discount": "請洽店家或內部公告"
+  },
+  {
+    "category": "car",
+    "name": "車麗屋汽車百貨",
+    "location": "全省",
+    "discount": "部份內容更新為全省適用"
+  },
+  {
+    "category": "car",
+    "name": "友立汽車精品百貨",
+    "location": "大村鄉",
+    "discount": "請洽店家或內部公告"
+  },
+  {
+    "category": "car",
+    "name": "全美汽車專業美容",
+    "location": "大村鄉",
+    "discount": "請洽店家或內部公告"
+  },
+  {
+    "category": "car",
+    "name": "大鴻昌汽車保修廠",
+    "location": "斗南鎮",
+    "discount": "請洽店家或內部公告"
+  },
+  {
+    "category": "car",
+    "name": "中橙汽車大樓專業隔熱紙",
+    "location": "大村鄉",
+    "discount": "請洽店家或內部公告"
+  },
+  {
+    "category": "car",
+    "name": "文忠汽車修理廠",
+    "location": "溪州鄉",
+    "discount": "請洽店家或內部公告"
+  },
+  {
+    "category": "car",
+    "name": "三陽工業汽機車",
+    "location": "全省",
+    "discount": "請洽店家或內部公告"
+  },
+  {
+    "category": "car",
+    "name": "NISSAN企業優惠購車",
+    "location": "全台",
+    "discount": "請洽店家或內部公告"
+  },
+  {
+    "category": "car",
+    "name": "LEAF裕日協力廠優惠方案",
+    "location": "全台",
+    "discount": "請洽店家或內部公告"
+  },
+  {
+    "category": "car",
+    "name": "冠城汽車租賃行",
+    "location": "金門縣",
+    "discount": "請洽店家或內部公告"
+  },
+  {
+    "category": "car",
+    "name": "中龍租車",
+    "location": "員林市",
+    "discount": "請洽店家或內部公告"
+  },
+  {
+    "category": "car",
+    "name": "匯聯汽車",
+    "location": "大村鄉",
+    "discount": "請洽店家或內部公告"
+  },
+  {
+    "category": "car",
+    "name": "滿溢租車",
+    "location": "花蓮市、台東市、屏東市",
+    "discount": "請洽店家或內部公告"
+  },
+  {
+    "category": "car",
+    "name": "JK膜藝",
+    "location": "虎尾鎮",
+    "discount": "請洽店家或內部公告"
+  },
+  {
+    "category": "car",
+    "name": "和運租車",
+    "location": "全省",
+    "discount": "和雲行動服務iRent APP"
+  },
+  {
+    "category": "car",
+    "name": "和運租車",
+    "location": "全省",
+    "discount": "和雲行動服務實際門市據點"
+  },
+  {
+    "category": "car",
+    "name": "安建360快速洗車",
+    "location": "員林市",
+    "discount": "請洽店家或內部公告"
+  },
+  {
+    "category": "finance",
+    "name": "明台產物保險股份有限公司",
+    "location": "員林通訊處",
+    "discount": "請洽店家或內部公告"
+  },
+  {
+    "category": "finance",
+    "name": "華南產物保險股份有限公司",
+    "location": "員林分公司",
+    "discount": "請洽店家或內部公告"
+  },
+  {
+    "category": "finance",
+    "name": "華南銀行貸款優惠方案",
+    "location": "全台",
+    "discount": "請洽店家或內部公告"
+  },
+  {
+    "category": "finance",
+    "name": "第一銀行房貸優惠方案",
+    "location": "全台",
+    "discount": "請洽店家或內部公告"
+  },
+  {
+    "category": "finance",
+    "name": "薪轉戶銀行活期儲蓄年利率公告",
+    "location": "全台",
+    "discount": "請洽店家或內部公告"
+  },
+  {
+    "category": "finance",
+    "name": "台新銀行貸款優惠方案",
+    "location": "全台",
+    "discount": "請洽店家或內部公告"
+  },
+  {
+    "category": "finance",
+    "name": "安泰銀行貸款優惠方案",
+    "location": "全台",
+    "discount": "請洽店家或內部公告"
+  },
+  {
+    "category": "finance",
+    "name": "永豐銀行貸款優惠方案",
+    "location": "全台",
+    "discount": "請洽店家或內部公告"
+  },
+  {
+    "category": "finance",
+    "name": "玉山銀行信用卡企業團辦優惠活動",
+    "location": "全台",
+    "discount": "請洽店家或內部公告"
+  },
+  {
+    "category": "finance",
+    "name": "遠東商銀優惠利率貸款專案",
+    "location": "全台",
+    "discount": "請洽店家或內部公告"
+  },
+  {
+    "category": "other",
+    "name": "公元銀樓",
+    "location": "員林市",
+    "discount": "請洽店家或內部公告"
+  },
+  {
+    "category": "other",
+    "name": "台灣高鐵企業會員",
+    "location": "全省",
+    "discount": "請洽店家或內部公告"
+  },
+  {
+    "category": "other",
+    "name": "元大鑽石銀樓",
+    "location": "員林市",
+    "discount": "請洽店家或內部公告"
+  },
+  {
+    "category": "other",
+    "name": "114年度福委會禮券發放方式說明",
+    "location": "電子禮券",
+    "discount": "請洽店家或內部公告"
+  },
+  {
+    "category": "other",
+    "name": "使用方式",
+    "location": "電子禮券",
+    "discount": "新增"
+  },
+  {
+    "category": "other",
+    "name": "昇恆昌免稅商店",
+    "location": "網路",
+    "discount": "請洽店家或內部公告"
+  },
+  {
+    "category": "other",
+    "name": "昇恆昌免稅商店活動",
+    "location": "網路",
+    "discount": "請洽店家或內部公告"
+  },
+  {
+    "category": "other",
+    "name": "美樂迪助聽器",
+    "location": "全省",
+    "discount": "請洽店家或內部公告"
+  },
+  {
+    "category": "other",
+    "name": "鑫鱻圓企業社",
+    "location": "員林市",
+    "discount": "請洽店家或內部公告"
+  },
+  {
+    "category": "other",
+    "name": "秀傳產後護理之家",
+    "location": "全台",
+    "discount": "請洽店家或內部公告"
+  },
+  {
+    "category": "other",
+    "name": "中華航空企業會員",
+    "location": "全台",
+    "discount": "請洽店家或內部公告"
+  },
+  {
+    "category": "other",
+    "name": "正新員工購胎優惠",
+    "location": "全台",
+    "discount": "請洽店家或內部公告"
+  },
+  {
+    "category": "other",
+    "name": "一條根保健作物生產合作社",
+    "location": "澎湖縣",
+    "discount": "請洽店家或內部公告"
+  },
+  {
+    "category": "other",
+    "name": "Nissan匯聯汽車購車方案",
+    "location": "員林市",
+    "discount": "請洽店家或內部公告"
+  },
+  {
+    "category": "other",
+    "name": "杏輝藥廠購買商品特惠方案",
+    "location": "全台",
+    "discount": "請洽店家或內部公告"
+  },
+  {
+    "category": "other",
+    "name": "五福旅遊",
+    "location": "彰化市",
+    "discount": "請洽店家或內部公告"
+  },
+  {
+    "category": "other",
+    "name": "《壯喔!壯壯X歐耶》雙人即興漫才",
+    "location": "全台",
+    "discount": "正新專屬購票享85折優惠"
+  },
+  {
+    "category": "other",
+    "name": "聽寶助聽中心",
+    "location": "全台",
+    "discount": "請洽店家或內部公告"
+  }
+]
