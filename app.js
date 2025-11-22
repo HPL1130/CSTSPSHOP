@@ -1,7 +1,7 @@
 // app.js
 
 // 關鍵修改 1: 檔案路徑使用明確的 './'，確保網頁和 App 環境都能正確解析。
-const SHOP_DATA_FILE = '/shop_data.json';
+const SHOP_DATA_FILE = './shop_data.json';
 const itemsPerPage = 10;
 let currentPage = 1;
 let allShops = [];
