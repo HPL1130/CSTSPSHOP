@@ -2,7 +2,7 @@
   "name": "正新特約商店",
   "short_name": "CSTSPSHOP",
   "description": "正新輪胎特約商店優惠查詢應用程式",
-  "start_url": "./shop_data.json",
+  "start_url": "./index.html",
   "display": "standalone",
   "background_color": "#ffffff",
   "theme_color": "#D32F2F",
