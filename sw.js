@@ -1,4 +1,4 @@
-const CACHE_NAME = 'cst-affiliate-shop-v1';
+const CACHE_NAME = 'cst-affiliate-shop-v2';
 const urlsToCache = [
   './', // 確保使用 './' 表示當前目錄 (這是解決 404 的關鍵之一)
   './index.html',
