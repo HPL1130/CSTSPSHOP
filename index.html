@@ -1,100 +1,58 @@
-
 <!DOCTYPE html>
-
 <html lang="zh-Hant">
-
 <head>
-
   <meta charset="UTF-8">
-
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
-
   <title>CST 正新特約商店地圖</title>
-
   <link rel="manifest" href="manifest.json"/>
-
   <link rel="stylesheet" href="styles.css"/>
-
 </head>
 <body>
-  <!-- Header（含品牌與 hero） -->
- <header class="site-header">
-
+  <header class="site-header">
     <div class="hero-wrap">
-
       <img src="images/hero.png" class="hero" alt="正新輪胎特約商店 LOGO"/>
-
       </div>
-
     <div class="brand">正新特約商店 CST AFFILIATE SHOP</div>
-
   </header>
 
-
-
   <main class="container">
-
     <div class="category-buttons">
-
       <button data-cat="all" class="active"><img src="images/categories/all.png" alt="全部"> 全部</button>
-
       <button data-cat="medical"><img src="images/categories/medical.png" alt="醫療保健"> 醫療保健</button>
-
       <button data-cat="food"><img src="images/categories/food.png" alt="美食餐飲"> 美食餐飲</button>
-
       <button data-cat="leisure"><img src="images/categories/leisure.png" alt="休閒住宿"> 休閒住宿</button>
-
       <button data-cat="daily"><img src="images/categories/daily.png" alt="生活用品"> 生活用品</button>
-
       <button data-cat="learning"><img src="images/categories/learning.png" alt="學習教育"> 學習教育</button>
-
       <button data-cat="moto"><img src="images/categories/moto.png" alt="機/腳踏車"> 機/腳踏車</button>
-
       <button data-cat="3c"><img src="images/categories/3c.png" alt="３Ｃ通訊"> ３Ｃ通訊</button>
-
       <button data-cat="car"><img src="images/categories/car.png" alt="汽車服務"> 汽車服務</button>
-
       <button data-cat="finance"><img src="images/categories/finance.png" alt="金融保險"> 金融保險</button>
-
       <button data-cat="other"><img src="images/categories/other.png" alt="其他類"> 其他類</button>
-
     </div>
 
-    <!-- 篩選器與搜尋 -->
-    <section class="filters">
-      <select id="districtFilter">
-        <!-- 初始選項要有 value="all" 才能配合 app.js 的邏輯 -->
-        <option value="all">所有地區</option>
-      </select>
-      <input id="keywordInput" type="search" placeholder="輸入關鍵字（店名／優惠／地點）…" />
-    </section>
+    <div class="filters">
+      <input id="keywordInput" type="text" placeholder="搜尋商店名稱或關鍵字..."/>
+      <select id="districtFilter"><option value="all">所有地區</option></select>
+    </div>
 
-    <!-- 列表（配合 styles.css 的 .shop-list 格線） -->
-    <main id="shopList" class="shop-list"></main>
+    <div id="shopList" class="shop-list"></div>
 
-    <!-- 分頁 -->
     <div class="pager">
       <button id="prevBtn" class="btn">上一頁</button>
-      <span id="pageInfo" class="page-info">1 / 1</span>
+      <span id="pageInfo" class="page-info">1</span>
       <button id="nextBtn" class="btn">下一頁</button>
     </div>
-  </div>
+  </main>
 
-  <!-- Footer -->
   <footer class="site-footer">
     <p>© 2025 正新輪胎特約商店 · 資訊僅供參考</p>
-    <p>詳細優惠內容與條件，請依各商店公告為準。</p>
+    <p style="font-size: 0.85rem; color: #D32F2F; margin-top: 8px;">詳細優惠內容與條件，請依各商店公告為準。</p>
   </footer>
 
-  <!-- 主程式（要放在 body 結尾，確保 DOM 皆已存在） -->
-  ./app.js</script>
-
-  <!-- 註冊 Service Worker（⚠️ 需 https 或 localhost；file:// 無法註冊） -->
+  <script src="app.js"></script>
   <script>
-    if ('serviceWorker' in navigator) {
-      // 在 http(s) 來源下，讓 sw.js 進行快取與離線支援
-      navigator.serviceWorker.register('./sw.js').catch(console.error);
-    }
+    // Service Worker 註冊
+    if ('serviceWorker' in navigator){ navigator.serviceWorker.register('sw.js'); }
   </script>
 </body>
 </html>
