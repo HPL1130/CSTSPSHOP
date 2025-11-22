@@ -4,7 +4,7 @@ const urlsToCache = [
   './index.html',
   './styles.css',
   './app.js',
-  './shop_data.json', // 必須確保資料檔案被快取
+  './data/shop_data.json', // 必須確保資料檔案被快取
   './manifest.json',
   // PWA 圖標
   './images/icons/icon-192x192.png',
