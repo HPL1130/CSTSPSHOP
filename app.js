@@ -2,7 +2,7 @@
 // app.js
 
 // ====== 基礎設定 ======
-const SHOP_DATA_FILE = 'shop_data.json';
+const SHOP_DATA_FILE = '/shop_data.json';
 const itemsPerPage = 24;
 let currentPage = 1;
 
