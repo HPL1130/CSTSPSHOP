@@ -3,56 +3,94 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
-  <title>CST 正新特約商店地圖</title>
+  <title>正新特約商店 APP</title>
   <link rel="manifest" href="manifest.json"/>
   <link rel="stylesheet" href="styles.css"/>
+  <link rel="icon" href="images/icons/favicon.ico" type="image/x-icon">
+  <link rel="apple-touch-icon" href="images/icons/apple-touch-icon.png">
 </head>
 <body>
   <header class="site-header">
     <div class="hero-wrap">
-      <img src="images/hero.png" class="hero" alt="正新輪胎特約商店 LOGO"/>
-      </div>
-    <div class="brand">正新特約商店 CST AFFILIATE SHOP</div>
+      <img src="images/hero.png" class="hero" alt="正新輪胎企業識別圖" onerror="this.style.display='none'"/>
+      <button id="toggleHero" class="hero-toggle">收合</button>
+    </div>
+    <div class="brand">正新特約商店 APP</div>
   </header>
 
   <main class="container">
     <div class="category-buttons">
       <button data-cat="all" class="active"><img src="images/categories/all.png" alt="全部"> 全部</button>
-      <button data-cat="medical"><img src="images/categories/medical.png" alt="醫療保健"> 醫療保健</button>
-      <button data-cat="food"><img src="images/categories/food.png" alt="美食餐飲"> 美食餐飲</button>
-      <button data-cat="leisure"><img src="images/categories/leisure.png" alt="休閒住宿"> 休閒住宿</button>
-      <button data-cat="daily"><img src="images/categories/daily.png" alt="生活用品"> 生活用品</button>
-      <button data-cat="learning"><img src="images/categories/learning.png" alt="學習教育"> 學習教育</button>
-      <button data-cat="moto"><img src="images/categories/moto.png" alt="機/腳踏車"> 機/腳踏車</button>
-      <button data-cat="3c"><img src="images/categories/3c.png" alt="３Ｃ通訊"> ３Ｃ通訊</button>
-      <button data-cat="car"><img src="images/categories/car.png" alt="汽車服務"> 汽車服務</button>
-      <button data-cat="finance"><img src="images/categories/finance.png" alt="金融保險"> 金融保險</button>
-      <button data-cat="other"><img src="images/categories/other.png" alt="其他類"> 其他類</button>
+      <button data-cat="medical"><img src="images/categories/medical.png" alt="醫療類"> 醫療</button>
+      <button data-cat="food"><img src="images/categories/food.png" alt="美食餐飲類"> 美食餐飲</button>
+      <button data-cat="leisure"><img src="images/categories/leisure.png" alt="休閒及住宿類"> 休閒住宿</button>
+      <button data-cat="daily"><img src="images/categories/daily.png" alt="生活用品類"> 生活用品</button>
+      <button data-cat="learning"><img src="images/categories/learning.png" alt="學習類"> 學習進修</button>
+      <button data-cat="moto"><img src="images/categories/moto.png" alt="機車腳踏車維修類"> 機車單車</button>
+      <button data-cat="3c"><img src="images/categories/3c.png" alt="3C類"> 3C</button>
+      <button data-cat="car"><img src="images/categories/car.png" alt="汽車維修類"> 汽車</button>
+      <button data-cat="finance"><img src="images/categories/finance.png" alt="銀行保險類"> 銀行保險</button>
+      <button data-cat="other"><img src="images/categories/other.png" alt="其他類"> 其他</button>
     </div>
 
     <div class="filters">
-      <input id="keywordInput" type="text" placeholder="搜尋商店名稱或關鍵字..."/>
-      <select id="districtFilter"><option value="all">所有地區</option></select>
+      <input id="keywordInput" type="text" placeholder="搜尋店名、優惠內容、地點..." aria-label="搜尋關鍵字"/>
+      <select id="districtFilter" aria-label="篩選地區"><option value="all">所有地區</option></select>
     </div>
-
+    
     <div id="shopList" class="shop-list"></div>
 
     <div class="pager">
       <button id="prevBtn" class="btn">上一頁</button>
-      <span id="pageInfo" class="page-info">1</span>
+      <span id="pageInfo">第 1 頁 / 共 1 頁</span>
       <button id="nextBtn" class="btn">下一頁</button>
     </div>
   </main>
 
   <footer class="site-footer">
-    <p>© 2025 正新輪胎特約商店 · 資訊僅供參考</p>
-    <p style="font-size: 0.85rem; color: #D32F2F; margin-top: 8px;">詳細優惠內容與條件，請依各商店公告為準。</p>
+    <p>
+      © 2025 正新企業內部公告 · 特約商店查詢
+    </p>
+    <p style="font-size: 0.85rem; color: #ef4444; margin-top: 8px;">
+      **優惠內容與適用條件依店家或福委會內部公告為準**
+    </p>
   </footer>
 
   <script src="app.js"></script>
   <script>
-    // Service Worker 註冊
+    // Service Worker 註冊 (PWA 離線支援)
     if ('serviceWorker' in navigator){ navigator.serviceWorker.register('sw.js'); }
+
+    // --- 橫幅收合功能 (Banner Toggle) ---
+    document.addEventListener('DOMContentLoaded', function() {
+      const toggleBtn = document.getElementById('toggleHero');
+      const header = document.querySelector('.site-header');
+
+      if(toggleBtn && header){
+        // 綁定點擊事件
+        toggleBtn.onclick = function(e) {
+          e.preventDefault(); 
+          
+          // 1. 切換 class，CSS 會自動處理背景隱藏/顯示
+          header.classList.toggle('collapsed');
+          
+          // 2. 判斷目前狀態，更新按鈕文字與顏色
+          const isCollapsed = header.classList.contains('collapsed');
+          
+          if (isCollapsed) {
+            // 狀態：已收合
+            toggleBtn.textContent = '展開';
+            toggleBtn.style.background = '#fff';   // 按鈕變白
+            toggleBtn.style.color = 'var(--brand)';// 文字變紅色
+          } else {
+            // 狀態：已展開
+            toggleBtn.textContent = '收合';
+            toggleBtn.style.background = 'var(--brand)'; // 按鈕變紅色
+            toggleBtn.style.color = '#fff';        // 文字變白
+          }
+        };
+      }
+    });
   </script>
 </body>
 </html>
