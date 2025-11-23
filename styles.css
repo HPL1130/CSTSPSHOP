@@ -196,7 +196,7 @@ body {
     /* 脫離正常文件流，相對於 .shop-card 定位 */
     position: absolute;
     top: -38px; /* 貼齊紅條頂部 */
-    left: 30; /* 完全貼齊左邊緣 */
+    left: 80; /* 完全貼齊左邊緣 */
     z-index: 3; 
 
     /* 樣式調整 */
