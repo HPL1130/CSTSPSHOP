@@ -71,7 +71,7 @@ body {
     background: var(--brand);
     color: white;
     border: 1px solid white;
-    padding: 3px 15px;
+    padding: 3px 40px;
     min-width: 30px; /* <--- 關鍵修改：設定最小寬度，確保文字能橫向顯示 */
     border-radius: 5px 5px 0 0;
     cursor: pointer;
