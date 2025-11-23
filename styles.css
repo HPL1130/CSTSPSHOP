@@ -72,7 +72,7 @@ body {
     color: white;
     border: 1px solid white;
     padding: 3px 15px;
-    min-width: 60px; /* <--- 關鍵修改：設定最小寬度，確保文字能橫向顯示 */
+    min-width: 30px; /* <--- 關鍵修改：設定最小寬度，確保文字能橫向顯示 */
     border-radius: 5px 5px 0 0;
     cursor: pointer;
     font-size: 0.9rem;
