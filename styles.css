@@ -63,7 +63,7 @@ body {
 /* 收合/展開按鈕定位 (修正後) */
 .hero-toggle {
     position: absolute; /* 絕對定位，相對於 .site-header */
-    bottom: 0; /* 貼齊 .site-header 底部 */
+    bottom: 20px; /* 貼齊 .site-header 底部 */
     left: 55%;
     transform: translateX(-50%);
     
@@ -72,7 +72,7 @@ body {
     color: white;
     border: 1px solid white;
     padding: 5px 15px;
-    min-width: 100px; /* <--- 關鍵修改：設定最小寬度，確保文字能橫向顯示 */
+    min-width: 70px; /* <--- 關鍵修改：設定最小寬度，確保文字能橫向顯示 */
     border-radius: 10px 10px 0 0;
     cursor: pointer;
     font-size: 0.9rem;
