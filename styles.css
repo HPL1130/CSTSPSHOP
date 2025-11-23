@@ -35,7 +35,7 @@ body {
 }
 /* 橫幅收合狀態 */
 .site-header.collapsed {
-    padding-bottom: 35px; /* 收合時保持底部填充，讓橫條不消失 */
+    padding-bottom: 20px; /* 收合時保持底部填充，讓橫條不消失 */
 }
 .site-header.collapsed .hero-wrap {
     max-height: 0;
