@@ -64,16 +64,16 @@ body {
 .hero-toggle {
     position: absolute; /* 絕對定位，相對於 .site-header */
     bottom: 0; /* 貼齊 .site-header 底部 */
-    left: 58%;
+    left: 55%;
     transform: translateX(-50%);
     
     /* 樣式保持不變 */
     background: var(--brand);
     color: white;
     border: 1px solid white;
-    padding: 3px 40px;
+    padding: 5px 15px;
     min-width: 30px; /* <--- 關鍵修改：設定最小寬度，確保文字能橫向顯示 */
-    border-radius: 5px 5px 0 0;
+    border-radius: 10px 10px 0 0;
     cursor: pointer;
     font-size: 0.9rem;
     transition: background 0.2s, color 0.2s;
