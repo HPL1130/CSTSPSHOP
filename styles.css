@@ -1,4 +1,4 @@
-/* CST Affiliate Shop Theme v1.0 */
+/* CST Affiliate Shop Theme v1.0 - 包含卡片式設計 */
 :root { 
     --brand: #D32F2F; /* 正新紅 */ 
     --brand-light: #EF5350;
@@ -12,7 +12,14 @@ body {
     margin: 0; 
     font-family: "Noto Sans TC", system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial; 
     color: var(--text); 
-    background-color: #ffffff; /* 白色背景 */
+    background-color: var(--light-bg); /* 將背景色改成淺灰，讓卡片更突出 */
+}
+
+/* 容器和主要內容 */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
 }
 
 /* Header 樣式 */
@@ -20,11 +27,10 @@ body {
     background: var(--brand);
     color: #fff;
     text-align: center;
-    padding: 0 0 1rem 0; /* 底部留白，讓品牌名稱不貼邊 */
-    transition: all 0.3s ease; /* 為收合動畫準備 */
+    padding: 0 0 1rem 0;
+    transition: all 0.3s ease;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
-/* 橫幅收合狀態 (如果需要 toggleHero 功能，請將此段加入 index.html 中) */
 .site-header.collapsed {
     padding-bottom: 0.5rem;
 }
@@ -35,159 +41,168 @@ body {
 }
 .hero-wrap {
     position: relative;
-    max-width: 1000px; /* 限制橫幅寬度 */
-    margin: 0.25rem auto;
-    max-height: 200px; /* 預設高度 */
+    max-width: 100%;
+    margin: 0 auto;
     overflow: hidden;
     transition: max-height 0.3s ease;
+    max-height: 250px; /* 預設高度 */
 }
-.site-header .hero {
+.hero {
     width: 100%;
-    max-height: 200px;
-    object-fit: cover;
+    height: auto;
     display: block;
+}
+.brand {
+    font-size: 1.5rem;
+    font-weight: 700;
+    padding: 10px 0;
 }
 .hero-toggle {
     position: absolute;
-    right: 8px;
-    bottom: 8px;
-    border: 0;
-    border-radius: 6px;
-    background: var(--brand); 
-    color: #fff;
-    padding: .35rem .8rem;
-    cursor: pointer;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.2);
-    font-weight: 500;
-}
-
-.site-header .brand {
-    font-size: 1.4rem;
-    font-weight: 700;
-    margin: 0.75rem auto 0.5rem;
-}
-
-/* 主要內容容器 */
-.container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 1rem;
-}
-
-/* 分類按鈕區塊 */
-.category-buttons {
-    display: flex;
-    overflow-x: auto;
-    gap: 8px;
-    padding: 10px 0;
-    margin-bottom: 1rem;
-    white-space: nowrap; /* 防止按鈕換行 */
-}
-.category-buttons button {
-    flex-shrink: 0; /* 不壓縮按鈕 */
-    background: var(--light-bg);
-    color: var(--text);
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    padding: 8px 12px;
+    bottom: 0;
+    right: 50%;
+    transform: translateX(50%);
+    background: var(--brand);
+    color: white;
+    border: 1px solid white;
+    padding: 5px 15px;
+    border-radius: 5px 5px 0 0;
     cursor: pointer;
     font-size: 0.9rem;
+    transition: background 0.2s, color 0.2s;
+}
+
+
+/* 類別按鈕 */
+.category-buttons {
+    display: flex;
+    overflow-x: auto; /* 允許橫向滾動 */
+    padding-bottom: 15px;
+    margin-bottom: 10px;
+    scrollbar-width: none; /* 隱藏 Firefox 滾動條 */
+    -ms-overflow-style: none; /* 隱藏 IE/Edge 滾動條 */
+}
+.category-buttons::-webkit-scrollbar {
+    display: none; /* 隱藏 WebKit 滾動條 */
+}
+
+.category-buttons button {
+    flex-shrink: 0; /* 防止按鈕被擠壓 */
+    background: #fff;
+    color: var(--text);
+    border: 1px solid #ccc;
+    padding: 8px 15px;
+    border-radius: 20px;
+    margin-right: 10px;
+    cursor: pointer;
     display: flex;
     align-items: center;
+    font-size: 1rem;
     transition: all 0.2s;
 }
+
 .category-buttons button:hover {
-    background: #eee;
-}
-.category-buttons button.active {
-    background: var(--brand); /* 選中的按鈕使用品牌色 */
-    color: #fff;
     border-color: var(--brand);
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
-.category-buttons button img {
+
+.category-buttons button.active {
+    background: var(--brand);
+    color: white;
+    border-color: var(--brand);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.category-buttons img {
     width: 20px;
     height: 20px;
-    margin-right: 6px;
-    filter: grayscale(100%) brightness(1); /* 預設圖標灰色 */
-}
-.category-buttons button.active img {
-    filter: invert(100%) sepia(0%) saturate(0%) hue-rotate(93deg) brightness(100%) contrast(100%); /* 選中時圖標變白色 */
+    margin-right: 8px;
 }
 
-/* 篩選器與搜尋 */
+/* 篩選器 */
 .filters {
     display: flex;
-    gap: 10px;
-    margin-bottom: 1.5rem;
-    flex-wrap: wrap;
-}
-.filters input[type="text"], .filters select {
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 6px;
-    font-size: 1rem;
-    flex: 1; /* 自動填滿空間 */
-    min-width: 150px;
-}
-.filters input[type="text"] {
-    flex: 2;
+    gap: 15px;
+    margin-bottom: 20px;
+    flex-wrap: wrap; /* 允許換行 */
 }
 
-/* 商店列表 */
+.filters input, .filters select {
+    padding: 10px 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1rem;
+    flex: 1; /* 讓輸入框和下拉選單自動佔用空間 */
+    min-width: 200px; /* 最小寬度 */
+}
+
+/* =================================== */
+/* === 卡片式設計樣式 (Card View) === */
+/* =================================== */
+
+/* 商店清單網格佈局 */
 .shop-list {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-    gap: 20px;
-}
-.shop-card {
-    background: #fff;
-    border: 1px solid #e0e0e0;
-    border-radius: 8px;
-    padding: 1rem;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
-    transition: transform 0.2s;
-}
-.shop-card:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    /* 在大螢幕上使用兩欄或三欄網格，手機上使用一欄 */
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); 
+    gap: 20px; /* 卡片間距 */
+    margin-top: 20px;
 }
 
+/* 卡片本身樣式 */
+.shop-card {
+    background-color: #ffffff; /* 卡片背景色 */
+    border: 1px solid #e0e0e0; /* 輕微邊框 */
+    border-radius: 8px; /* 圓角 */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05); /* 輕微陰影，營造立體感 */
+    padding: 20px;
+    transition: transform 0.2s, box-shadow 0.2s;
+    min-height: 150px; /* 確保卡片有最小高度 */
+}
+
+/* 滑鼠懸停效果 (可選) */
+.shop-card:hover {
+    transform: translateY(-3px); /* 輕微上移 */
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1); /* 增加陰影 */
+}
+
+/* 卡片內元素優化 */
 .item-header {
     display: flex;
-    align-items: center;
     justify-content: space-between;
-    margin-bottom: 0.5rem;
-    border-bottom: 2px solid var(--brand-light); /* 增加底線區分 */
-    padding-bottom: 5px;
+    align-items: flex-start; /* 商店名稱和地點對齊上方 */
+    margin-bottom: 10px;
+    border-bottom: 1px solid #eee; /* 分隔線 */
+    padding-bottom: 10px;
 }
 
 .item-header h2 {
-    font-size: 1.25rem;
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: var(--brand); /* 商店名稱使用品牌色 */
     margin: 0;
-    color: var(--brand);
-    font-weight: 600;
+    line-height: 1.3;
 }
 
 .location-badge {
-    background: var(--brand-light);
-    color: #fff;
+    background: var(--brand); /* 地區標籤使用品牌色 */
+    color: white;
     padding: 4px 8px;
     border-radius: 4px;
     font-size: 0.8rem;
     font-weight: 500;
+    flex-shrink: 0; /* 防止被 h2 擠壓 */
+    margin-left: 10px;
 }
 
 .item-body p {
-    margin: 0.5rem 0;
+    margin: 8px 0;
     font-size: 0.95rem;
+    line-height: 1.5;
 }
 
-/* 優惠內容特別樣式 (app.js 中已使用 --brand 顏色) */
 .item-body strong {
     font-weight: 600;
 }
-
 
 /* 分頁器 */
 .pager {
@@ -220,37 +235,44 @@ body {
     font-weight: 500;
     color: var(--text);
 }
+
 .no-results {
     grid-column: 1 / -1; /* 跨越所有列 */
     text-align: center;
-    color: #999;
     padding: 40px;
-    font-size: 1.1rem;
-    border: 1px dashed #ccc;
+    color: #666;
+    background-color: #fff;
     border-radius: 8px;
 }
 
-/* Footer */
+/* 頁腳 */
 .site-footer {
     text-align: center;
-    padding: 1.5rem 1rem;
-    background: var(--light-bg);
+    padding: 20px;
+    margin-top: 40px;
     border-top: 1px solid #eee;
-    margin-top: 2rem;
-    font-size: 0.9rem;
+    background-color: var(--light-bg);
     color: #666;
-}
-.site-footer p {
-    margin: 5px 0;
+    font-size: 0.9rem;
 }
 
-/* RWD 調整 */
+/* 媒體查詢：手機優化 */
 @media (max-width: 600px) {
+    .container {
+        padding: 10px;
+    }
     .filters {
         flex-direction: column;
+        gap: 10px;
     }
-    .filters input[type="text"], .filters select {
+    .filters input, .filters select {
         width: 100%;
         min-width: unset;
+    }
+    .brand {
+        font-size: 1.2rem;
+    }
+    .item-header h2 {
+        font-size: 1.1rem;
     }
 }
