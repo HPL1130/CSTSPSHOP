@@ -64,8 +64,8 @@ body {
 .hero-toggle {
     position: absolute; 
     /* 關鍵修改：將按鈕頂部向上拉回，使其在 35px 的橫條中居中 */
-    bottom: 10px; 
-    left: 55%;
+    bottom: 20px; 
+    left: 60%;
     transform: translateX(-50%);
     
     background: var(--brand);
