@@ -1,4 +1,4 @@
-/* CST Affiliate Shop Theme v1.0 - 包含卡片式設計 */
+/* CST Affiliate Shop Theme v1.0 - 包含資料夾卡片設計 */
 :root { 
     --brand: #D32F2F; /* 正新紅 */ 
     --brand-light: #EF5350;
@@ -12,7 +12,7 @@ body {
     margin: 0; 
     font-family: "Noto Sans TC", system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial; 
     color: var(--text); 
-    background-color: var(--light-bg); 
+    background-color: var(--light-bg); /* 將背景色改成淺灰，讓卡片更突出 */
 }
 
 /* 容器和主要內容 */
@@ -45,7 +45,7 @@ body {
     margin: 0 auto;
     overflow: hidden;
     transition: max-height 0.3s ease;
-    max-height: 250px; 
+    max-height: 250px; /* 預設高度 */
 }
 .hero {
     width: 100%;
@@ -76,18 +76,18 @@ body {
 /* 類別按鈕 */
 .category-buttons {
     display: flex;
-    overflow-x: auto; 
+    overflow-x: auto; /* 允許橫向滾動 */
     padding-bottom: 15px;
     margin-bottom: 10px;
-    scrollbar-width: none; 
-    -ms-overflow-style: none; 
+    scrollbar-width: none; /* 隱藏 Firefox 滾動條 */
+    -ms-overflow-style: none; /* 隱藏 IE/Edge 滾動條 */
 }
 .category-buttons::-webkit-scrollbar {
-    display: none; 
+    display: none; /* 隱藏 WebKit 滾動條 */
 }
 
 .category-buttons button {
-    flex-shrink: 0; 
+    flex-shrink: 0; /* 防止按鈕被擠壓 */
     background: #fff;
     color: var(--text);
     border: 1px solid #ccc;
@@ -145,175 +145,4 @@ body {
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); 
     gap: 25px 20px; 
     margin-top: 20px;
-    padding-bottom: 20px; 
-}
-
-/* 卡片本身樣式 - 資料夾封面 */
-.shop-card {
-    position: relative; 
-    background-color: #ffffff; 
-    border: 1px solid #e0e0e0; 
-    border-radius: 8px 8px 0 0; 
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1); 
-    padding: 20px;
-    padding-top: 25px; 
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    min-height: 150px; 
-    z-index: 1; 
-}
-
-/* 資料夾的「背面」或「標籤」效果 (紅色長條) */
-.shop-card::before {
-    content: '';
-    position: absolute;
-    top: -15px; 
-    left: -1px; 
-    right: -1px; 
-    height: 30px; 
-    background-color: var(--brand); 
-    border-radius: 8px 8px 0 0; 
-    border: 1px solid var(--brand); 
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    z-index: 0; 
-}
-
-/* 滑鼠懸停效果 */
-.shop-card:hover {
-    transform: translateY(-8px); 
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15); 
-    z-index: 2; 
-}
-.shop-card:hover::before {
-    transform: translateY(-5px); 
-    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
-}
-
-
-/* ************************************************* */
-/* 關鍵修改: 地點標籤獨立定位到紅條上 */
-/* ************************************************* */
-.location-badge {
-    position: absolute;
-    top: -18px; /* 向上移動，讓它坐在紅條上 */
-    left: 15px; /* 距離左側的間距 */
-    z-index: 3; /* 確保在紅條 (:before) 之上 */
-
-    /* 樣式調整，使其看起來像一個獨立的標籤 */
-    background: #fff; /* 白色背景 */
-    color: var(--brand); /* 紅色文字 */
-    padding: 3px 10px;
-    border-radius: 4px 4px 0 0; 
-    font-size: 0.85rem;
-    font-weight: 600;
-    border: 1px solid #ddd;
-    border-bottom: none; 
-    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.08); 
-}
-
-/* ************************************************* */
-/* 關鍵修改: 調整 .item-header 結構 */
-/* ************************************************* */
-.item-header {
-    /* 調整為靠左對齊，因為地點標籤已脫離文件流 */
-    display: flex;
-    justify-content: flex-start;
-    align-items: flex-start;
-    margin-bottom: 10px;
-    border-bottom: 1px dashed #ddd; 
-    padding-bottom: 10px;
-    position: relative;
-    z-index: 1; 
-}
-
-.item-header h2 {
-    font-size: 1.25rem;
-    font-weight: 700;
-    color: var(--text);
-    margin: 0;
-    line-height: 1.3;
-    flex-grow: 1; 
-}
-
-.item-body p {
-    margin: 8px 0;
-    font-size: 0.95rem;
-    line-height: 1.5;
-}
-
-.item-body strong {
-    font-weight: 600;
-}
-
-/* 分頁器 */
-.pager {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 15px;
-    margin-top: 2rem;
-    padding: 1rem 0;
-}
-.pager .btn {
-    background: var(--brand);
-    color: white;
-    border: none;
-    padding: 10px 20px;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 1rem;
-    transition: background 0.2s;
-}
-.pager .btn:hover:not(:disabled) {
-    background: var(--brand-light);
-}
-.pager .btn:disabled {
-    background: #ccc;
-    cursor: not-allowed;
-}
-
-.page-info {
-    font-weight: 500;
-    color: var(--text);
-}
-
-.no-results {
-    grid-column: 1 / -1; 
-    text-align: center;
-    padding: 40px;
-    color: #666;
-    background-color: #fff;
-    border-radius: 8px;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05); 
-}
-
-/* 頁腳 */
-.site-footer {
-    text-align: center;
-    padding: 20px;
-    margin-top: 40px;
-    border-top: 1px solid #eee;
-    background-color: var(--light-bg);
-    color: #666;
-    font-size: 0.9rem;
-}
-
-/* 媒體查詢：手機優化 */
-@media (max-width: 600px) {
-    .container {
-        padding: 10px;
-    }
-    .filters {
-        flex-direction: column;
-        gap: 10px;
-    }
-    .filters input, .filters select {
-        width: 100%;
-        min-width: unset;
-    }
-    .brand {
-        font-size: 1.2rem;
-    }
-    .item-header h2 {
-        font-size: 1.1rem;
-    }
-}
+    padding-bottom: 20
