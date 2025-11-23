@@ -64,7 +64,7 @@ body {
 .hero-toggle {
     position: absolute; /* 絕對定位，相對於 .site-header */
     bottom: 0; /* 貼齊 .site-header 底部 */
-    left: 100%;
+    left: 60%;
     transform: translateX(-50%);
     
     /* 樣式保持不變 */
