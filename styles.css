@@ -28,8 +28,7 @@ body {
     background: var(--brand);
     color: #fff;
     text-align: center;
-    /* 關鍵修改：增加底部填充，為按鈕區域留出空間。這裡使用 35px 讓橫條更高一些。 */
-    padding: 0 0 35px 0; 
+    padding: 0 0 30px 0; 
     transition: all 0.3s ease;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
@@ -65,8 +64,8 @@ body {
 .hero-toggle {
     position: absolute; 
     /* 關鍵修改：將按鈕頂部向上拉回，使其在 35px 的橫條中居中 */
-    bottom: 15px; 
-    left: 58%;
+    bottom: 5px; 
+    left: 55%;
     transform: translateX(-50%);
     
     background: var(--brand);
