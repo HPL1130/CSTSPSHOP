@@ -1,4 +1,4 @@
-const CACHE_NAME = 'cst-affiliate-shop-v2'; // <--- 變更到 v2 (強制更新)
+const CACHE_NAME = 'cst-affiliate-shop-v3'; // <--- 變更到 v3 (強制更新)
 const urlsToCache = [
   './', 
   './index.html',
