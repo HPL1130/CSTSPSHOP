@@ -205,7 +205,7 @@ body {
 .location-badge {
     /* 脫離正常文件流，相對於 .shop-card 定位 */
     position: absolute;
-    top: -70px; /* 貼齊紅條頂部 */
+    top: -100px; /* 貼齊紅條頂部 */
     left: 0; /* 完全貼齊左邊緣 */
     z-index: 3; 
 
