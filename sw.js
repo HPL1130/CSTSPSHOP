@@ -1,15 +1,16 @@
-const CACHE_NAME = 'cst-affiliate-shop-v3'; // <--- 變更到 v3 (強制更新)
+// sw.js
+
+const CACHE_NAME = 'cst-affiliate-shop-v4'; // <--- 關鍵：將版本號升級到 v4
 const urlsToCache = [
   './', 
   './index.html',
   './styles.css',
   './app.js',
-  // './shop_data.json', // <-- 舊資料檔案已移除
   './manifest.json',
   // PWA 圖標
   './images/icons/icon-192x192.png',
   './images/icons/icon-512x512.png',
-  // 類別圖標
+  // 類別圖標 
   './images/categories/all.png',
   './images/categories/medical.png',
   './images/categories/food.png',
@@ -40,6 +41,7 @@ self.addEventListener('activate', event => {
       // 刪除所有舊版本的快取
       return Promise.all(
         cacheNames.filter(cacheName => {
+          // 刪除所有不等於目前 CACHE_NAME (v2) 的舊版本快取
           return cacheName.startsWith('cst-affiliate-shop-') && cacheName !== CACHE_NAME;
         }).map(cacheName => {
           return caches.delete(cacheName);
@@ -54,11 +56,9 @@ self.addEventListener('fetch', event => {
   event.respondWith(
     caches.match(event.request)
       .then(response => {
-        // 如果快取中有匹配的資源，就直接返回
         if (response) {
           return response;
         }
-        // 否則就從網路發起請求
         return fetch(event.request);
       })
   );
