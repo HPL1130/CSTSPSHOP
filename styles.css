@@ -28,8 +28,7 @@ body {
     background: var(--brand);
     color: #fff;
     text-align: center;
-    /* 關鍵修改：增加底部填充到 35px (橫條高度) */
-    padding: 0 0 35px 0; 
+    padding: 0 0 20px 0; 
     transition: all 0.3s ease;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
