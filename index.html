@@ -40,6 +40,11 @@
       <select id="districtFilter" aria-label="篩選地區"><option value="all">所有地區</option></select>
     </div>
     
+    <!-- 載入中提示 -->
+    <div id="loadingMessage" class="loading-message" style="display:none;">
+      ⏳ 正在載入資料，請稍候...
+    </div>
+
     <div id="shopList" class="shop-list"></div>
 
     <div class="pager">
@@ -69,26 +74,18 @@
       const header = document.querySelector('.site-header');
 
       if(toggleBtn && header){
-        // 綁定點擊事件
         toggleBtn.onclick = function(e) {
           e.preventDefault(); 
-          
-          // 1. 切換 class，CSS 會自動處理背景隱藏/顯示
           header.classList.toggle('collapsed');
-          
-          // 2. 判斷目前狀態，更新按鈕文字與顏色
           const isCollapsed = header.classList.contains('collapsed');
-          
           if (isCollapsed) {
-            // 狀態：已收合
             toggleBtn.textContent = '展開';
-            toggleBtn.style.background = '#fff';   // 按鈕變白
-            toggleBtn.style.color = 'var(--brand)';// 文字變紅色
+            toggleBtn.style.background = '#fff';
+            toggleBtn.style.color = 'var(--brand)';
           } else {
-            // 狀態：已展開
             toggleBtn.textContent = '收合';
-            toggleBtn.style.background = 'var(--brand)'; // 按鈕變紅色
-            toggleBtn.style.color = '#fff';        // 文字變白
+            toggleBtn.style.background = 'var(--brand)';
+            toggleBtn.style.color = '#fff';
           }
         };
       }
