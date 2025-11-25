@@ -34,7 +34,7 @@ async function loadShops() {
     const text = await response.text();
     
     // 移除 Google Sheets API 特有的字串前綴和後綴，提取純 JSON 數據
-    const jsonString = text.substring(47).slice(0, -2); 
+    const json = JSON.parse(text.match(/google\.visualization\.Query\.setResponse\(([\s\S]*?)\);/)[1]);
     const json = JSON.parse(jsonString);
 
     // 提取商店資料
