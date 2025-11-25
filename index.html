@@ -51,19 +51,21 @@
     <div class="category-buttons">
       <button data-cat="all" class="active"><img src="images/categories/all.png" alt="全部"> 全部</button>
       <button data-cat="medical"><img src="images/categories/medical.png" alt="醫療類"> 醫療</button>
-      <button data-cat="food"><img src="images/categories/food.png" alt="餐飲類"> 餐飲</button>
-      <button data-cat="beauty"><img src="images/categories/beauty.png" alt="美容美髮類"> 美容</button>
-      <button data-cat="car"><img src="images/categories/car.png" alt="汽車維修、汽車精品、汽車美容類"> 汽車</button>
-      <button data-cat="house"><img src="images/categories/house.png" alt="居家、生活服務類"> 居家</button>
-      <button data-cat="education"><img src="images/categories/education.png" alt="教育學習類"> 教育</button>
-      <button data-cat="travel"><img src="images/categories/travel.png" alt="休閒旅遊類"> 旅遊</button>
-      <button data-cat="other"><img src="images/categories/other.png" alt="其他"> 其他</button>
+      <button data-cat="food"><img src="images/categories/food.png" alt="美食餐飲類"> 美食餐飲</button>
+      <button data-cat="leisure"><img src="images/categories/leisure.png" alt="休閒及住宿類"> 休閒住宿</button>
+      <button data-cat="daily"><img src="images/categories/daily.png" alt="生活用品類"> 生活用品</button>
+      <button data-cat="learning"><img src="images/categories/learning.png" alt="學習類"> 學習進修</button>
+      <button data-cat="moto"><img src="images/categories/moto.png" alt="機車腳踏車維修類"> 機車單車</button>
+      <button data-cat="3c"><img src="images/categories/3c.png" alt="3C類"> 3C</button>
+      <button data-cat="car"><img src="images/categories/car.png" alt="汽車維修類"> 汽車</button>
+      <button data-cat="finance"><img src="images/categories/finance.png" alt="銀行保險類"> 銀行保險</button>
+      <button data-cat="other"><img src="images/categories/other.png" alt="其他類"> 其他</button>
     </div>
 
     <div class="filters">
       <div class="input-group">
         <input type="text" id="keywordInput" placeholder="🔍 輸入關鍵字 (名稱/優惠內容)" class="input-field"/>
-        </div>
+      </div>
       <select id="districtFilter" class="input-field"></select>
     </div>
 
@@ -110,8 +112,13 @@
           const isCollapsed = header.classList.contains('collapsed');
           if (isCollapsed) {
             toggleBtn.textContent = '展開';
+            // 由於採用了新的 styles.css，這裡的內聯樣式可以移除，但為了兼容舊版代碼仍保留
+            toggleBtn.style.background = '#fff';
+            toggleBtn.style.color = 'var(--brand)';
           } else {
             toggleBtn.textContent = '收合';
+            toggleBtn.style.background = 'var(--brand)';
+            toggleBtn.style.color = '#fff';
           }
         };
       }
