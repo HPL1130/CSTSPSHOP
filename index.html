@@ -8,33 +8,6 @@
   <title>正新特約商店 APP</title>
   <link rel="manifest" href="manifest.json"/>
   <link rel="stylesheet" href="styles.css"/>
-  
-  <style>
-    /* 解決文字超出框框的問題 */
-    .card-body, .card-discount {
-      word-wrap: break-word;
-      overflow-wrap: break-word;
-      white-space: normal;
-    }
-    /* 確保主列表容器有基本的流動性，以防 styles.css 載入失敗 */
-    #shopList {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 20px;
-      margin-top: 20px;
-    }
-    .card {
-      /* 確保即使沒有 grid 也能看見卡片 */
-      border: 1px solid #ddd; 
-      padding: 15px;
-      min-width: 300px;
-      flex-grow: 1;
-      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-      background: white;
-      border-radius: 8px;
-    }
-  </style>
-  
   <link rel="icon" href="images/icons/favicon.ico" type="image/x-icon">
   <link rel="apple-touch-icon" href="images/icons/icon-512x512.png">
 </head>
@@ -112,7 +85,7 @@
           const isCollapsed = header.classList.contains('collapsed');
           if (isCollapsed) {
             toggleBtn.textContent = '展開';
-            // 由於採用了新的 styles.css，這裡的內聯樣式可以移除，但為了兼容舊版代碼仍保留
+            // 由於您保留舊的 styles.css，這裡的內聯樣式用於兼容舊代碼邏輯
             toggleBtn.style.background = '#fff';
             toggleBtn.style.color = 'var(--brand)';
           } else {
