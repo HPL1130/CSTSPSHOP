@@ -1,6 +1,6 @@
 // sw.js
 
-const CACHE_NAME = 'cst-affiliate-shop-v4'; // <--- 關鍵：將版本號升級到 v4
+const CACHE_NAME = 'cst-affiliate-shop-v5'; // <--- 關鍵：將版本號升級到 v4
 const urlsToCache = [
   './', 
   './index.html',
