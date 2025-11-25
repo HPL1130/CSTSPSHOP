@@ -86,7 +86,6 @@
           const isCollapsed = header.classList.contains('collapsed');
           if (isCollapsed) {
             toggleBtn.textContent = '展開';
-            // 保留原本的內聯樣式修改，以防舊的 styles.css 中沒有這段邏輯
             toggleBtn.style.background = '#fff';
             toggleBtn.style.color = 'var(--brand)';
           } else {
