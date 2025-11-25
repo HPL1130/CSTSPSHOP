@@ -47,10 +47,12 @@
 
     <div id="shopList" class="shop-list"></div>
 
-    <div class="pager">
+ <div class="pager">
   <button id="prevBtn" class="btn">上一頁</button>
   <span id="pageInfo">第 1 頁 / 共 1 頁</span>
-  <select id="pageJumpSelect" class="btn" style="margin: 0 5px;"></select>
+  
+  <input type="number" id="pageJumpInput" min="1" value="1" style="width: 50px; text-align: center; margin-left: 5px;">
+  <button id="jumpBtn" class="btn" style="margin-right: 5px;">跳轉</button>
   <button id="nextBtn" class="btn">下一頁</button>
 </div>
   </main>
