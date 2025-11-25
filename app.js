@@ -18,6 +18,10 @@ const prevBtn = document.getElementById('prevBtn');
 const nextBtn = document.getElementById('nextBtn');
 const categoryButtons = document.querySelector('.category-buttons');
 
+// 新增：頁數跳轉元件
+const pageJumpInput = document.getElementById('pageJumpInput');
+const jumpBtn = document.getElementById('jumpBtn');
+
 
 /**
  * 載入特約商店資料 (從 Google Sheets API 讀取並解析)
@@ -113,7 +117,7 @@ function renderList() {
       const card = document.createElement('div');
       card.className = 'card';
       
-      // 恢復到原始的卡片顯示結構 (純文字，沒有互動連結)
+      // 恢復到原始的卡片顯示結構
       const body = document.createElement('div');
       body.className = 'card-body';
       body.innerHTML = `
@@ -128,10 +132,18 @@ function renderList() {
       shopListElement.appendChild(card);
     });
 
-    // 更新分頁資訊 (保留顯示總頁數)
+    // 更新分頁資訊
     pageInfo.textContent = `第 ${currentPage} 頁 / 共 ${totalPages} 頁 (共 ${filteredShops.length} 筆)`;
     prevBtn.disabled = currentPage === 1;
     nextBtn.disabled = currentPage === totalPages || totalPages === 0;
+
+    // 新增：同步跳轉輸入框的頁碼並設定狀態
+    pageJumpInput.value = currentPage; 
+    pageJumpInput.min = 1;
+    const maxPages = totalPages > 0 ? totalPages : 1;
+    pageJumpInput.max = maxPages; 
+    pageJumpInput.disabled = maxPages <= 1;
+    jumpBtn.disabled = maxPages <= 1;
 }
 
 
@@ -189,6 +201,34 @@ nextBtn.addEventListener('click', () => {
         window.scrollTo({ top: 0, behavior: 'smooth' });
     }
 });
+
+
+/**
+ * 新增：跳轉按鈕事件監聽器 (處理手動輸入的頁數)
+ */
+jumpBtn.addEventListener('click', () => {
+    const totalPages = Math.ceil(filteredShops.length / itemsPerPage);
+    const newPage = parseInt(pageJumpInput.value);
+
+    if (isNaN(newPage) || newPage < 1) {
+        alert('請輸入有效的頁數 (大於 0)。');
+        pageJumpInput.value = currentPage; 
+        return;
+    }
+
+    if (newPage > totalPages) {
+        alert(`輸入頁數超過最大頁數 (${totalPages} 頁)。`);
+        pageJumpInput.value = currentPage; 
+        return;
+    }
+
+    if (newPage !== currentPage) {
+        currentPage = newPage;
+        renderList();
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+});
+
 
 // 啟動應用程式
 loadShops();
