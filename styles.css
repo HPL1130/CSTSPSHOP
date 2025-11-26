@@ -1,4 +1,3 @@
-
 /* styles.css - 增強行動裝置體驗 + loading + 卡片樣式 */
 :root { 
     --brand: #D32F2F; 
@@ -52,29 +51,30 @@ body { margin: 0; font-family: "Noto Sans TC", system-ui, -apple-system, "Segoe 
 .shop-card::before { content:''; position:absolute; top:-12px; left:-1px; right:-1px; height:28px; background:var(--brand); border-radius:8px 8px 0 0; z-index:0; }
 
 /* ************************************************* */
-/* 關鍵修改: 地點標籤獨立定位到紅條下緣 */
+/* 關鍵修改: 地點標籤獨立定位到紅條下緣 (PC版) */
 /* ************************************************* */
 .location-badge {
     /* 脫離正常文件流，相對於 .shop-card 定位 */
     position: absolute;
-    top: -5px; /* 修改這裡：將 top 從 -38px 改為 -5px，讓標籤向下移動並掛在紅條下緣 */
-    left: 0; /* 保持貼齊左邊緣 */
+    top: -5px; /* 掛在紅條下緣 */
+    left: 0; /* 貼齊左邊緣 */
     z-index: 3; 
 
     /* 樣式調整 */
     background: #fff; 
     color: var(--brand); 
     padding: 3px 10px;
-    border-radius: 0 0 4px 4px; /* 修改這裡：改為下方圓角，讓標籤看起來是掛著的 */
+    border-radius: 0 0 4px 4px; /* 下方圓角 */
     font-size: 0.85rem;
     font-weight: 600;
     
     /* 邊框調整 */
     border: 1px solid #ddd;
     border-left: none; 
-    border-top: none; /* 修改這裡：移除上邊框，與紅條無縫連接 */
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.08); /* 修改這裡：改為向下的陰影 */
+    border-top: none; /* 移除上邊框 */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.08); /* 向下的陰影 */
 }
+
 /* item header/body */
 .item-header { position:relative; z-index:1; padding-left:6px; margin-bottom:8px; }
 .item-header h2 { margin:0; font-size:1.05rem; line-height:1.25; }
@@ -93,13 +93,21 @@ body { margin: 0; font-family: "Noto Sans TC", system-ui, -apple-system, "Segoe 
 /* footer */
 .site-footer { text-align:center; padding:18px; margin-top:28px; border-top:1px solid #eee; color:#666; font-size:0.9rem; background:transparent; }
 
-/* responsive tweaks */
+/* responsive tweaks (手機版修正) */
 @media (max-width: 600px) {
   .container { padding:12px; }
   .brand { font-size:1.05rem; }
   .hero-toggle { bottom:10px; padding:6px 12px; font-size:0.85rem; }
   .shop-card { padding:12px; padding-top:28px; min-height:110px; }
-  .location-badge { left:6px; max-width:110px; font-size:0.85rem; top:-36px; }
+  
+  /* 🚨 關鍵修正：手機版也要保持在紅條下方 */
+  .location-badge { 
+      left: 0; 
+      max-width:110px; 
+      font-size:0.85rem; 
+      top: -5px; /* 這裡從 -36px 改為 -5px，與 PC 版一致 */
+  }
+  
   .search-wrapper input { padding-left:36px; }
 }
 
