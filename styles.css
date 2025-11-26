@@ -51,9 +51,30 @@ body { margin: 0; font-family: "Noto Sans TC", system-ui, -apple-system, "Segoe 
 }
 .shop-card::before { content:''; position:absolute; top:-12px; left:-1px; right:-1px; height:28px; background:var(--brand); border-radius:8px 8px 0 0; z-index:0; }
 
-/* location badge */
-.location-badge { position:absolute; top:-40px; left:8px; z-index:3; background:#fff; color:var(--brand); padding:4px 8px; border-radius:6px 6px 0 0; font-weight:700; font-size:0.9rem; border:1px solid #e6e6e6; max-width:160px; overflow:hidden; text-overflow:ellipsis; white-space:nowrap; }
+/* ************************************************* */
+/* 關鍵修改: 地點標籤獨立定位到紅條下緣 */
+/* ************************************************* */
+.location-badge {
+    /* 脫離正常文件流，相對於 .shop-card 定位 */
+    position: absolute;
+    top: -5px; /* 修改這裡：將 top 從 -38px 改為 -5px，讓標籤向下移動並掛在紅條下緣 */
+    left: 0; /* 保持貼齊左邊緣 */
+    z-index: 3; 
 
+    /* 樣式調整 */
+    background: #fff; 
+    color: var(--brand); 
+    padding: 3px 10px;
+    border-radius: 0 0 4px 4px; /* 修改這裡：改為下方圓角，讓標籤看起來是掛著的 */
+    font-size: 0.85rem;
+    font-weight: 600;
+    
+    /* 邊框調整 */
+    border: 1px solid #ddd;
+    border-left: none; 
+    border-top: none; /* 修改這裡：移除上邊框，與紅條無縫連接 */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.08); /* 修改這裡：改為向下的陰影 */
+}
 /* item header/body */
 .item-header { position:relative; z-index:1; padding-left:6px; margin-bottom:8px; }
 .item-header h2 { margin:0; font-size:1.05rem; line-height:1.25; }
