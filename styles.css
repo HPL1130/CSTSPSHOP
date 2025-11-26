@@ -86,7 +86,7 @@ body { margin: 0; font-family: "Noto Sans TC", system-ui, -apple-system, "Segoe 
   .shop-card { transform: none !important; box-shadow:0 6px 12px rgba(0,0,0,0.04); }
 }
 
-/* pagination jump */
+/* === 分頁跳轉功能樣式 === */
 .pagination-jump { display:flex; flex-direction:column; align-items:center; gap:12px; margin-top:12px; padding-bottom:24px; }
 .page-links { display:flex; gap:6px; flex-wrap:wrap; justify-content:center; }
 .page-btn { background:#fff; color:var(--brand); border:1px solid var(--brand); padding:6px 10px; border-radius:6px; cursor:pointer; font-size:0.85rem; }
@@ -94,4 +94,4 @@ body { margin: 0; font-family: "Noto Sans TC", system-ui, -apple-system, "Segoe 
 .page-btn:hover { background:var(--brand-light); color:#fff; }
 .ellipsis { padding:6px 10px; color:#999; font-size:0.85rem; }
 .jump-form { display:flex; gap:8px; align-items:center; }
-.jump-form input { width:80px; padding:6px 8px; border-radius:6px; border:1px solid #ccc; font-size:0.85rem; }
+.jump-form input { width:80px; padding:6px 8px; border-radius:6px; border:1px solid #ccc; font-size:0.
