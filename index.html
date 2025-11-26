@@ -21,12 +21,14 @@
 <main class="container">
   <!-- 類別篩選與搜尋 -->
   <div class="category-buttons" role="tablist" aria-label="類別篩選">
-    <!-- ...原按鈕群略... -->
+    <button data-cat="all" class="active" type="button">全部</button>
+    <button data-cat="food" type="button">美食</button>
+    <button data-cat="medical" type="button">醫療</button>
+    <!-- 其他類別略 -->
   </div>
 
   <div class="filters">
     <div class="search-wrapper">
-      <svg class="search-icon" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path fill="currentColor" d="..."/></svg>
       <input id="keywordInput" type="text" placeholder="搜尋店名、優惠內容、地點..." aria-label="搜尋關鍵字"/>
     </div>
     <select id="districtFilter" aria-label="篩選地區"><option value="all">所有地區</option></select>
@@ -37,20 +39,20 @@
   <div id="shopList" class="shop-list" aria-live="polite"></div>
 
   <!-- 分頁區塊 -->
- <div class="pager">
-  <button id="prevBtn" class="btn">上一頁</button>
-  <span id="pageInfo" class="page-info">第 1 頁 / 共 1 頁</span>
-  <button id="nextBtn" class="btn">下一頁</button>
-</div>
-
-<!-- 跳轉頁碼功能 -->
-<div class="pagination-jump">
-  <div id="pageLinks" class="page-links"></div>
-  <div class="jump-form">
-    <input type="number" id="jumpInput" min="1" placeholder="輸入頁碼"/>
-    <button id="jumpBtn" class="btn small">跳轉</button>
+  <div class="pager">
+    <button id="prevBtn" class="btn">上一頁</button>
+    <span id="pageInfo" class="page-info">第 1 頁 / 共 1 頁</span>
+    <button id="nextBtn" class="btn">下一頁</button>
   </div>
-</div>
+
+  <!-- 跳轉頁碼功能 -->
+  <div class="pagination-jump">
+    <div id="pageLinks" class="page-links"></div>
+    <div class="jump-form">
+      <input type="number" id="jumpInput" min="1" placeholder="輸入頁碼"/>
+      <button id="jumpBtn" class="btn small">跳轉</button>
+    </div>
+  </div>
 </main>
 
 <footer class="site-footer">
@@ -59,43 +61,5 @@
 </footer>
 
 <script src="app.js"></script>
-<script>
-  // Service Worker 註冊
-  if ('serviceWorker' in navigator){ navigator.serviceWorker.register('sw.js').catch(()=>{}); }
-
-  // Banner 收合功能
-  document.addEventListener('DOMContentLoaded', function() {
-    const toggleBtn = document.getElementById('toggleHero');
-    const header = document.querySelector('.site-header');
-    if(toggleBtn && header){
-      toggleBtn.onclick = function(e) {
-        e.preventDefault(); 
-        header.classList.toggle('collapsed');
-        const isCollapsed = header.classList.contains('collapsed');
-        toggleBtn.setAttribute('aria-expanded', String(!isCollapsed));
-        toggleBtn.textContent = isCollapsed ? '展開' : '收合';
-        toggleBtn.style.background = isCollapsed ? '#fff' : 'var(--brand)';
-        toggleBtn.style.color = isCollapsed ? 'var(--brand)' : '#fff';
-      };
-    }
-
-    // 跳轉頁碼功能（範例）
-    document.getElementById('jumpBtn').onclick = function() {
-      const page = parseInt(document.getElementById('jumpInput').value);
-      if (!isNaN(page) && page >= 1 && page <= 2082) {
-        alert(`跳轉至第 ${page} 頁（此處可改為載入資料）`);
-        // TODO: 載入指定頁資料
-      }
-    };
-
-    document.querySelectorAll('.page-btn').forEach(btn => {
-      btn.onclick = function() {
-        const page = parseInt(btn.textContent);
-        alert(`跳轉至第 ${page} 頁（此處可改為載入資料）`);
-        // TODO: 載入指定頁資料
-      };
-    });
-  });
-</script>
 </body>
 </html>
