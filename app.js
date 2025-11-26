@@ -1,9 +1,9 @@
 
-// app.js — 保留原始欄位對應 + 修正 JSON 錯誤 + debounce + loading + 數字分頁 + 跳轉
+// app.js — 保留原始欄位對應 + 修正 JSON 解析 + debounce + loading + 數字分頁 + 跳轉
 const SHEET_ID = '1bKWj9iSJvUtStbVAiBzY1M5D4BSJ5Uf0n9uhTJ4g3b8';
 const SHOP_DATA_URL = `https://docs.google.com/spreadsheets/d/${SHEET_ID}/gviz/tq?tqx=out:json&headers=1`;
 
-// ✅ 每頁顯示 24 筆（依您的要求）
+// ✅ 每頁顯示 24 筆
 const itemsPerPage = 24;
 
 let currentPage = 1;
@@ -20,7 +20,7 @@ const nextBtn = document.getElementById('nextBtn');
 const categoryButtons = document.querySelector('.category-buttons');
 const loadingMessage = document.getElementById('loadingMessage');
 
-// 分頁新增的節點
+// 分頁新增節點
 const pageNumbers   = document.getElementById('pageNumbers');
 const ellipsisSpan  = document.getElementById('ellipsis');
 const lastPageBtn   = document.getElementById('lastPageBtn');
@@ -29,23 +29,28 @@ const jumpBtn       = document.getElementById('jumpBtn');
 const totalPagesText= document.getElementById('totalPagesText');
 
 /* -----------------------------
-   安全版 Google Sheets JSON 解析
+   更健壯的 Google Sheets JSON 解析
 ------------------------------ */
 async function fetchSheetJson(url) {
   const res = await fetch(url, { cache: "no-cache" });
+  if (!res.ok) {
+    throw new Error(`Google Sheets 回應錯誤：HTTP ${res.status}`);
+  }
   const text = await res.text();
-  const start = text.indexOf("setResponse(");
-  if (start === -1) throw new Error("找不到 setResponse()");
-  let jsonText = text.substring(start + "setResponse(".length);
-  const end = jsonText.lastIndexOf(")");
-  if (end === -1) throw new Error("找不到 JSON 結尾 )");
-  jsonText = jsonText.substring(0, end);
-  jsonText = jsonText.replace(/\n/g, "\\n");
+
+  // gviz 格式包含 setResponse({...})
+  const match = text.match(/setResponse\(([\s\S]*?)\)\s*;?$/);
+  if (!match || !match[1]) {
+    console.error('原始回應片段：', text.slice(0, 300));
+    throw new Error('找不到 setResponse(...) JSON 區塊或格式不符');
+  }
+  const jsonText = match[1].replace(/\n/g, '\\n');
+
   try {
     return JSON.parse(jsonText);
   } catch (e) {
-    console.error("解析失敗片段：", jsonText.slice(0, 300));
-    throw new Error("Google Sheets JSON 無法解析：" + e.message);
+    console.error('解析失敗片段：', jsonText.slice(0, 300));
+    throw new Error('Google Sheets JSON 無法解析：' + e.message);
   }
 }
 
@@ -64,22 +69,40 @@ async function loadShops() {
   showLoading(true);
   try {
     const parsed = await fetchSheetJson(SHOP_DATA_URL);
-    const columns = parsed.table.cols.map(c => c.label);
+
+    // 取標題列（試算表的第一列 labels）
+    const columns = parsed.table.cols.map(c => c.label?.trim());
+
+    // 允許欄位別名（避免標題稍有不同導致抓不到）
+    const nameKey     = columns.find(k => /^(店名|名稱|name)$/i.test(k))     || 'name';
+    const discountKey = columns.find(k => /^(優惠|內容|discount)$/i.test(k)) || 'discount';
+    const locationKey = columns.find(k => /^(地區|區域|location)$/i.test(k)) || 'location';
+    const categoryKey = columns.find(k => /^(分類|類別|category)$/i.test(k)) || 'category';
+
     allShops = parsed.table.rows.map(row => {
       const shop = {};
       row.c.forEach((cell, i) => {
-        shop[columns[i]] = cell?.v != null ? String(cell.v) : "";
+        const key = columns[i] || `col_${i}`;
+        shop[key] = cell?.v != null ? String(cell.v) : "";
       });
-      return shop;
+
+      // 標準化欄位命名（供後續使用）
+      return {
+        name:     shop[nameKey]     || "",
+        discount: shop[discountKey] || "",
+        location: shop[locationKey] || "",
+        category: shop[categoryKey] || "其他"
+      };
     });
 
-    // 收集地區
+    // 收集地區（使用「、」「，」「/」等常見分隔）
     availableDistricts = new Set();
     allShops.forEach(shop => {
-      shop.location?.split("、").forEach(d => {
-        d = d?.trim();
-        if (d) availableDistricts.add(d);
-      });
+      (shop.location || "")
+        .split(/[、，,\/\|]/)
+        .map(s => s.trim())
+        .filter(Boolean)
+        .forEach(d => availableDistricts.add(d));
     });
 
     populateDistrictFilter();
@@ -111,20 +134,16 @@ function populateDistrictFilter() {
 ------------------------------ */
 function filterAndRender() {
   currentPage = 1;
-  const keyword = keywordInput.value.toLowerCase().trim();
+  const keyword = (keywordInput.value || "").toLowerCase().trim();
   const district = districtFilter.value;
   const activeBtn = categoryButtons.querySelector("button.active");
   const category = activeBtn ? activeBtn.dataset.cat : "all";
 
   filteredShops = allShops.filter(shop => {
     const matchCat = category === "all" || shop.category === category;
-    const matchDist = district === "all" || shop.location?.includes(district);
-    const matchKey =
-      !keyword ||
-      shop.name?.toLowerCase().includes(keyword) ||
-      shop.discount?.toLowerCase().includes(keyword) ||
-      shop.location?.toLowerCase().includes(keyword);
-
+    const matchDist = district === "all" || shop.location.includes(district);
+    const baseText = `${shop.name} ${shop.discount} ${shop.location}`.toLowerCase();
+    const matchKey = !keyword || baseText.includes(keyword);
     return matchCat && matchDist && matchKey;
   });
 
@@ -177,118 +196,8 @@ function renderList() {
 }
 
 /* -----------------------------
-   數字分頁 + 跳轉框
+   數字分頁 + 跳轉框（含 Enter）
 ------------------------------ */
 function renderPager(totalPages) {
   // 邊界保護
   if (currentPage < 1) currentPage = 1;
-  if (currentPage > totalPages) currentPage = totalPages;
-
-  // 上/下一頁按鈕 (沿用既有 prevBtn / nextBtn)
-  prevBtn.disabled = currentPage === 1;
-  nextBtn.disabled = currentPage === totalPages;
-
-  prevBtn.onclick = () => {
-    if (currentPage > 1) {
-      currentPage--;
-      renderList();
-    }
-  };
-  nextBtn.onclick = () => {
-    const tp = Math.ceil(filteredShops.length / itemsPerPage) || 1;
-    if (currentPage < tp) {
-      currentPage++;
-      renderList();
-    }
-  };
-
-  // 清空頁碼容器
-  pageNumbers.innerHTML = "";
-
-  // 視窗一次顯示 10 個頁碼（仿附圖）
-  const windowSize = 10;
-
-  let start = Math.max(1, currentPage - Math.floor(windowSize / 2));
-  let end   = start + windowSize - 1;
-  if (end > totalPages) {
-    end = totalPages;
-    start = Math.max(1, end - windowSize + 1);
-  }
-
-  // 1..N 的數字按鈕
-  for (let p = start; p <= end; p++) {
-    const btn = document.createElement("button");
-    btn.className = "page-number-btn";
-    btn.textContent = String(p);
-    if (p === currentPage) btn.classList.add("active");
-    btn.setAttribute("aria-label", `第 ${p} 頁`);
-    btn.onclick = () => {
-      currentPage = p;
-      renderList();
-    };
-    pageNumbers.appendChild(btn);
-  }
-
-  // 省略 + 最後一頁
-  if (end < totalPages) {
-    ellipsisSpan.style.display = "inline";
-    lastPageBtn.style.display = "inline";
-    lastPageBtn.textContent = String(totalPages);
-    lastPageBtn.className = "btn small";
-    lastPageBtn.setAttribute("aria-label", `跳至第 ${totalPages} 頁`);
-    lastPageBtn.onclick = () => {
-      currentPage = totalPages;
-      renderList();
-    };
-  } else {
-    ellipsisSpan.style.display = "none";
-    lastPageBtn.style.display = "none";
-  }
-
-  // 跳轉框與總頁數
-  totalPagesText.textContent = ` / ${totalPages}頁`;
-  jumpInput.value = String(currentPage);
-  jumpInput.min = 1;
-  jumpInput.max = String(totalPages);
-
-  // 跳轉動作（按鈕 + Enter）
-  const doJump = () => {
-    const val = parseInt(jumpInput.value, 10);
-    if (!isNaN(val)) {
-      const target = Math.min(Math.max(1, val), totalPages);
-      if (target !== currentPage) {
-        currentPage = target;
-        renderList();
-      }
-    }
-  };
-  jumpBtn.onclick = doJump;
-  jumpInput.addEventListener("keydown", (e) => {
-    if (e.key === "Enter") doJump();
-  });
-}
-
-/* -----------------------------
-   debounce for keyword search
------------------------------- */
-function debounce(fn, delay = 250) {
-  let timer;
-  return (...args) => {
-    clearTimeout(timer);
-    timer = setTimeout(() => fn(...args), delay);
-  };
-}
-keywordInput.addEventListener("input", debounce(filterAndRender));
-districtFilter.addEventListener("change", filterAndRender);
-categoryButtons.addEventListener("click", e => {
-  const btn = e.target.closest("button");
-  if (!btn) return;
-  categoryButtons.querySelectorAll("button").forEach(b => b.classList.remove("active"));
-  btn.classList.add("active");
-  filterAndRender();
-});
-
-/* -----------------------------
-   啟動程式
------------------------------- */
-loadShops();
