@@ -37,33 +37,20 @@
   <div id="shopList" class="shop-list" aria-live="polite"></div>
 
   <!-- 分頁區塊 -->
-  <div class="pager">
-    <button id="prevBtn" class="btn">上一頁</button>
-    <span id="pageInfo" class="page-info">第 1 頁 / 共 2082 頁</span>
-    <button id="nextBtn" class="btn">下一頁</button>
-  </div>
+ <div class="pager">
+  <button id="prevBtn" class="btn">上一頁</button>
+  <span id="pageInfo" class="page-info">第 1 頁 / 共 1 頁</span>
+  <button id="nextBtn" class="btn">下一頁</button>
+</div>
 
-  <!-- 跳轉頁碼功能 -->
-  <div class="pagination-jump">
-    <div class="page-links">
-      <button class="page-btn">1</button>
-      <button class="page-btn">2</button>
-      <button class="page-btn">3</button>
-      <button class="page-btn">4</button>
-      <button class="page-btn">5</button>
-      <button class="page-btn">6</button>
-      <button class="page-btn">7</button>
-      <button class="page-btn">8</button>
-      <button class="page-btn">9</button>
-      <button class="page-btn">10</button>
-      <span class="ellipsis">...</span>
-      <button class="page-btn">2082</button>
-    </div>
-    <div class="jump-form">
-      <input type="number" id="jumpInput" min="1" max="2082" placeholder="輸入頁碼"/>
-      <button id="jumpBtn" class="btn small">跳轉</button>
-    </div>
+<!-- 跳轉頁碼功能 -->
+<div class="pagination-jump">
+  <div id="pageLinks" class="page-links"></div>
+  <div class="jump-form">
+    <input type="number" id="jumpInput" min="1" placeholder="輸入頁碼"/>
+    <button id="jumpBtn" class="btn small">跳轉</button>
   </div>
+</div>
 </main>
 
 <footer class="site-footer">
