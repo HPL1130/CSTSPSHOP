@@ -1,101 +1,169 @@
-
 <!DOCTYPE html>
-<html lang="zh-Hant">
+<html lang="zh-TW">
 <head>
-  <meta name="apple-mobile-web-app-capable" content="yes">
-  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1"/>
-  <title>正新特約商店 APP</title>
-  <link rel="manifest" href="manifest.json"/>
-  <link rel="stylesheet" href="styles.css"/>
-  <link rel="icon" href="images/icons/favicon.ico" type="image/x-icon">
-  <link rel="apple-touch-icon" href="images/icons/icon-512x512.png">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TOYOTA 風格分頁跳轉 - 完整置換程式碼</title>
+    
+    <style>
+        /* 基礎設定 - 為了讓置換後的程式碼能在瀏覽器中顯示置中 */
+        body {
+            font-family: "Microsoft JhengHei", Arial, sans-serif;
+            background-color: #f4f4f4;
+            display: flex;
+            justify-content: center;
+            padding-top: 50px;
+        }
+        
+        /* --- 分頁外層容器 --- */
+        .pagination-wrapper {
+            display: flex;
+            align-items: center;
+            justify-content: center; /* 置中對齊 */
+            flex-wrap: wrap;
+            gap: 5px; /* 按鈕間距 */
+            margin-top: 20px;
+        }
+
+        /* --- 按鈕基礎樣式 --- */
+        .page-btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            height: 36px;
+            min-width: 36px;
+            padding: 0 10px;
+            border: 1px solid #ddd;
+            background-color: #fff;
+            color: #333;
+            text-decoration: none;
+            font-size: 14px;
+            border-radius: 4px;
+            transition: all 0.2s;
+            box-sizing: border-box;
+        }
+
+        .page-btn.nav-btn {
+            font-weight: bold;
+            padding: 0 15px;
+        }
+
+        /* --- 滑鼠移入效果 (TOYOTA 紅 #EB1923) --- */
+        .page-btn:hover {
+            border-color: #EB1923;
+            color: #EB1923;
+            background-color: #fff5f5;
+        }
+
+        /* --- 當前頁面 (Active) --- */
+        .page-btn.active {
+            background-color: #EB1923;
+            border-color: #EB1923;
+            color: #fff;
+        }
+
+        /* --- 省略號 ... --- */
+        .dots {
+            color: #666;
+            padding: 0 5px;
+            font-weight: bold;
+        }
+
+        /* --- 跳轉區塊 (輸入框容器) --- */
+        .jump-container {
+            display: flex;
+            align-items: center;
+            height: 36px;
+            border: 1px solid #ddd;
+            background: #fff;
+            border-radius: 4px;
+            margin: 0 10px;
+            overflow: hidden;
+        }
+
+        .jump-container:focus-within {
+            border-color: #EB1923;
+        }
+
+        /* --- 輸入框本體 --- */
+        .jump-input {
+            width: 45px;
+            height: 100%;
+            border: none;
+            outline: none;
+            text-align: center;
+            font-size: 14px;
+            color: #EB1923;
+            font-weight: bold;
+        }
+
+        /* 總頁數文字 */
+        .total-pages {
+            color: #666;
+            font-size: 14px;
+            padding-right: 8px;
+            white-space: nowrap;
+        }
+
+        /* 隱藏 input number 的上下箭頭 */
+        .jump-input::-webkit-outer-spin-button,
+        .jump-input::-webkit-inner-spin-button {
+            -webkit-appearance: none;
+            margin: 0;
+        }
+        .jump-input {
+            -moz-appearance: textfield;
+        }
+    </style>
 </head>
 <body>
-<header class="site-header">
-    <div class="hero-wrap">
-      <img src="images/hero.png" class="hero" alt="正新輪胎企業識別圖" onerror="this.style.display='none'"/>
+
+    <div class="pagination-wrapper">
+        <a href="#" class="page-btn nav-btn">❮ 返回</a>
+
+        <a href="#" class="page-btn active">1</a>
+        <a href="#" class="page-btn">2</a>
+        <a href="#" class="page-btn">3</a>
+        <a href="#" class="page-btn">4</a>
+        <a href="#" class="page-btn">5</a>
+        
+        <span class="dots">...</span>
+        
+        <a href="#" class="page-btn">26</a>
+
+        <div class="jump-container">
+            <input type="number" class="jump-input" value="1" id="pageJumpInput">
+            <span class="total-pages">/ 26 頁</span>
+        </div>
+
+        <a href="#" class="page-btn nav-btn">下一頁 ❯</a>
     </div>
-    <div class="brand">正新特約商店 APP</div>
-    <button id="toggleHero" class="hero-toggle" aria-expanded="true">收合</button> 
-  </header>
+    
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            var input = document.getElementById('pageJumpInput');
+            var maxPage = 26; // **請修改為你網站的實際總頁數**
 
-  <main class="container">
-    <div class="category-buttons" role="tablist" aria-label="類別篩選">
-      <button data-cat="all" class="active" type="button"><img src="images/categories/all.png" alt=""> 全部</button>
-      <button data-cat="medical" type="button"><img src="images/categories/medical.png" alt=""> 醫療</button>
-      <button data-cat="food" type="button"><img src="images/categories/food.png" alt=""> 美食</button>
-      <button data-cat="leisure" type="button"><img src="images/categories/leisure.png" alt=""> 休閒</button>
-      <button data-cat="daily" type="button"><img src="images/categories/daily.png" alt=""> 生活用品</button>
-      <button data-cat="learning" type="button"><img src="images/categories/learning.png" alt=""> 學習</button>
-      <button data-cat="moto" type="button"><img src="images/categories/moto.png" alt=""> 機車/單車</button>
-      <button data-cat="3c" type="button"><img src="images/categories/3c.png" alt=""> 3C</button>
-      <button data-cat="car" type="button"><img src="images/categories/car.png" alt=""> 汽車</button>
-      <button data-cat="finance" type="button"><img src="images/categories/finance.png" alt=""> 銀行/保險</button>
-      <button data-cat="other" type="button"><img src="images/categories/other.png" alt=""> 其他</button>
-    </div>
+            if(input) {
+                input.addEventListener('keypress', function (e) {
+                    if (e.key === 'Enter') {
+                        e.preventDefault();
+                        
+                        var page = parseInt(this.value);
 
-    <div class="filters">
-      <div class="search-wrapper">
-        <svg class="search-icon" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path fill="currentColor" d="M15.5 14h-.79l-.28-.27A6.471 6.471 0 0016 9.5 6.5 6.5 0 109.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5z"></path></svg>
-        <input id="keywordInput" type="text" placeholder="搜尋店名、優惠內容、地點..." aria-label="搜尋關鍵字"/>
-      </div>
-      <select id="districtFilter" aria-label="篩選地區"><option value="all">所有地區</option></select>
-      <button id="reloadBtn" class="btn small" type="button" onclick="location.reload();">重新載入</button>
-    </div>
+                        if (isNaN(page) || page < 1 || page > maxPage) {
+                            alert('請輸入有效的頁碼 (1 ~ ' + maxPage + ')');
+                            this.value = 1;
+                        } else {
+                            // *** 實際應用時，將下一行註解拿掉，並修改成你的換頁網址 ***
+                            // window.location.href = "/your-page?page=" + page;
+                            alert('正在執行跳轉至第 ' + page + ' 頁...'); 
+                        }
+                    }
+                });
+            }
+        });
+    </script>
 
-    <!-- 載入中提示 -->
-    <div id="loadingMessage" class="loading-message" style="display:none;">
-      ⏳ 正在載入資料，請稍候...
-    </div>
-
-    <div id="shopList" class="shop-list" aria-live="polite"></div>
-
-    <div class="pager">
-      <button id="prevBtn" class="btn">上一頁</button>
-      <span id="pageInfo" class="page-info">第 1 頁 / 共 1 頁</span>
-      <button id="nextBtn" class="btn">下一頁</button>
-    </div>
-  </main>
-
-  <footer class="site-footer">
-    <p>
-      © 2025 正新企業內部公告 · 特約商店查詢
-    </p>
-    <p style="font-size: 0.85rem; color: #ef4444; margin-top: 8px;">
-      **優惠內容與適用條件依店家或福委會內部公告為準**
-    </p>
-  </footer>
-
-  <script src="app.js"></script>
-  <script>
-    // Service Worker 註冊 (PWA 離線支援)
-    if ('serviceWorker' in navigator){ navigator.serviceWorker.register('sw.js').catch(()=>{}); }
-
-    // --- 橫幅收合功能 (Banner Toggle) ---
-    document.addEventListener('DOMContentLoaded', function() {
-      const toggleBtn = document.getElementById('toggleHero');
-      const header = document.querySelector('.site-header');
-
-      if(toggleBtn && header){
-        toggleBtn.onclick = function(e) {
-          e.preventDefault(); 
-          header.classList.toggle('collapsed');
-          const isCollapsed = header.classList.contains('collapsed');
-          toggleBtn.setAttribute('aria-expanded', String(!isCollapsed));
-          if (isCollapsed) {
-            toggleBtn.textContent = '展開';
-            toggleBtn.style.background = '#fff';
-            toggleBtn.style.color = 'var(--brand)';
-          } else {
-            toggleBtn.textContent = '收合';
-            toggleBtn.style.background = 'var(--brand)';
-            toggleBtn.style.color = '#fff';
-          }
-        };
-      }
-    });
-  </script>
 </body>
 </html>
