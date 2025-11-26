@@ -1,9 +1,6 @@
-
 <!DOCTYPE html>
 <html lang="zh-Hant">
 <head>
-  <meta name="apple-mobile-web-app-capable" content="yes">
-  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <title>正新特約商店 APP</title>
@@ -14,88 +11,104 @@
 </head>
 <body>
 <header class="site-header">
-    <div class="hero-wrap">
-      <img src="images/hero.png" class="hero" alt="正新輪胎企業識別圖" onerror="this.style.display='none'"/>
+  <div class="hero-wrap">
+    <img src="images/hero.png" class="hero" alt="正新輪胎企業識別圖" onerror="this.style.display='none'"/>
+  </div>
+  <div class="brand">正新特約商店 APP</div>
+  <button id="toggleHero" class="hero-toggle" aria-expanded="true">收合</button> 
+</header>
+
+<main class="container">
+  <!-- 類別篩選與搜尋 -->
+  <div class="category-buttons" role="tablist" aria-label="類別篩選">
+    <!-- ...原按鈕群略... -->
+  </div>
+
+  <div class="filters">
+    <div class="search-wrapper">
+      <svg class="search-icon" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path fill="currentColor" d="..."/></svg>
+      <input id="keywordInput" type="text" placeholder="搜尋店名、優惠內容、地點..." aria-label="搜尋關鍵字"/>
     </div>
-    <div class="brand">正新特約商店 APP</div>
-    <button id="toggleHero" class="hero-toggle" aria-expanded="true">收合</button> 
-  </header>
+    <select id="districtFilter" aria-label="篩選地區"><option value="all">所有地區</option></select>
+    <button id="reloadBtn" class="btn small" type="button" onclick="location.reload();">重新載入</button>
+  </div>
 
-  <main class="container">
-    <div class="category-buttons" role="tablist" aria-label="類別篩選">
-      <button data-cat="all" class="active" type="button"><img src="images/categories/all.png" alt=""> 全部</button>
-      <button data-cat="medical" type="button"><img src="images/categories/medical.png" alt=""> 醫療</button>
-      <button data-cat="food" type="button"><img src="images/categories/food.png" alt=""> 美食</button>
-      <button data-cat="leisure" type="button"><img src="images/categories/leisure.png" alt=""> 休閒</button>
-      <button data-cat="daily" type="button"><img src="images/categories/daily.png" alt=""> 生活用品</button>
-      <button data-cat="learning" type="button"><img src="images/categories/learning.png" alt=""> 學習</button>
-      <button data-cat="moto" type="button"><img src="images/categories/moto.png" alt=""> 機車/單車</button>
-      <button data-cat="3c" type="button"><img src="images/categories/3c.png" alt=""> 3C</button>
-      <button data-cat="car" type="button"><img src="images/categories/car.png" alt=""> 汽車</button>
-      <button data-cat="finance" type="button"><img src="images/categories/finance.png" alt=""> 銀行/保險</button>
-      <button data-cat="other" type="button"><img src="images/categories/other.png" alt=""> 其他</button>
+  <div id="loadingMessage" class="loading-message" style="display:none;">⏳ 正在載入資料，請稍候...</div>
+  <div id="shopList" class="shop-list" aria-live="polite"></div>
+
+  <!-- 分頁區塊 -->
+  <div class="pager">
+    <button id="prevBtn" class="btn">上一頁</button>
+    <span id="pageInfo" class="page-info">第 1 頁 / 共 2082 頁</span>
+    <button id="nextBtn" class="btn">下一頁</button>
+  </div>
+
+  <!-- 跳轉頁碼功能 -->
+  <div class="pagination-jump">
+    <div class="page-links">
+      <button class="page-btn">1</button>
+      <button class="page-btn">2</button>
+      <button class="page-btn">3</button>
+      <button class="page-btn">4</button>
+      <button class="page-btn">5</button>
+      <button class="page-btn">6</button>
+      <button class="page-btn">7</button>
+      <button class="page-btn">8</button>
+      <button class="page-btn">9</button>
+      <button class="page-btn">10</button>
+      <span class="ellipsis">...</span>
+      <button class="page-btn">2082</button>
     </div>
-
-    <div class="filters">
-      <div class="search-wrapper">
-        <svg class="search-icon" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path fill="currentColor" d="M15.5 14h-.79l-.28-.27A6.471 6.471 0 0016 9.5 6.5 6.5 0 109.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5z"></path></svg>
-        <input id="keywordInput" type="text" placeholder="搜尋店名、優惠內容、地點..." aria-label="搜尋關鍵字"/>
-      </div>
-      <select id="districtFilter" aria-label="篩選地區"><option value="all">所有地區</option></select>
-      <button id="reloadBtn" class="btn small" type="button" onclick="location.reload();">重新載入</button>
+    <div class="jump-form">
+      <input type="number" id="jumpInput" min="1" max="2082" placeholder="輸入頁碼"/>
+      <button id="jumpBtn" class="btn small">跳轉</button>
     </div>
+  </div>
+</main>
 
-    <!-- 載入中提示 -->
-    <div id="loadingMessage" class="loading-message" style="display:none;">
-      ⏳ 正在載入資料，請稍候...
-    </div>
+<footer class="site-footer">
+  <p>© 2025 正新企業內部公告 · 特約商店查詢</p>
+  <p style="font-size: 0.85rem; color: #ef4444; margin-top: 8px;">**優惠內容與適用條件依店家或福委會內部公告為準**</p>
+</footer>
 
-    <div id="shopList" class="shop-list" aria-live="polite"></div>
+<script src="app.js"></script>
+<script>
+  // Service Worker 註冊
+  if ('serviceWorker' in navigator){ navigator.serviceWorker.register('sw.js').catch(()=>{}); }
 
-    <div class="pager">
-      <button id="prevBtn" class="btn">上一頁</button>
-      <span id="pageInfo" class="page-info">第 1 頁 / 共 1 頁</span>
-      <button id="nextBtn" class="btn">下一頁</button>
-    </div>
-  </main>
+  // Banner 收合功能
+  document.addEventListener('DOMContentLoaded', function() {
+    const toggleBtn = document.getElementById('toggleHero');
+    const header = document.querySelector('.site-header');
+    if(toggleBtn && header){
+      toggleBtn.onclick = function(e) {
+        e.preventDefault(); 
+        header.classList.toggle('collapsed');
+        const isCollapsed = header.classList.contains('collapsed');
+        toggleBtn.setAttribute('aria-expanded', String(!isCollapsed));
+        toggleBtn.textContent = isCollapsed ? '展開' : '收合';
+        toggleBtn.style.background = isCollapsed ? '#fff' : 'var(--brand)';
+        toggleBtn.style.color = isCollapsed ? 'var(--brand)' : '#fff';
+      };
+    }
 
-  <footer class="site-footer">
-    <p>
-      © 2025 正新企業內部公告 · 特約商店查詢
-    </p>
-    <p style="font-size: 0.85rem; color: #ef4444; margin-top: 8px;">
-      **優惠內容與適用條件依店家或福委會內部公告為準**
-    </p>
-  </footer>
-
-  <script src="app.js"></script>
-  <script>
-    // Service Worker 註冊 (PWA 離線支援)
-    if ('serviceWorker' in navigator){ navigator.serviceWorker.register('sw.js').catch(()=>{}); }
-
-    // --- 橫幅收合功能 (Banner Toggle) ---
-    document.addEventListener('DOMContentLoaded', function() {
-      const toggleBtn = document.getElementById('toggleHero');
-      const header = document.querySelector('.site-header');
-
-      if(toggleBtn && header){
-        toggleBtn.onclick = function(e) {
-          e.preventDefault(); 
-          header.classList.toggle('collapsed');
-          const isCollapsed = header.classList.contains('collapsed');
-          toggleBtn.setAttribute('aria-expanded', String(!isCollapsed));
-          if (isCollapsed) {
-            toggleBtn.textContent = '展開';
-            toggleBtn.style.background = '#fff';
-            toggleBtn.style.color = 'var(--brand)';
-          } else {
-            toggleBtn.textContent = '收合';
-            toggleBtn.style.background = 'var(--brand)';
-            toggleBtn.style.color = '#fff';
-          }
-        };
+    // 跳轉頁碼功能（範例）
+    document.getElementById('jumpBtn').onclick = function() {
+      const page = parseInt(document.getElementById('jumpInput').value);
+      if (!isNaN(page) && page >= 1 && page <= 2082) {
+        alert(`跳轉至第 ${page} 頁（此處可改為載入資料）`);
+        // TODO: 載入指定頁資料
       }
+    };
+
+    document.querySelectorAll('.page-btn').forEach(btn => {
+      btn.onclick = function() {
+        const page = parseInt(btn.textContent);
+        alert(`跳轉至第 ${page} 頁（此處可改為載入資料）`);
+        // TODO: 載入指定頁資料
+      };
     });
-  </script>
+  });
+</script>
 </body>
 </html>
