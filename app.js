@@ -172,7 +172,18 @@ function filterAndRender() {
 
         return matchCat && matchDist && matchKey;
     });
+// --- 加入這段：更新顯示數量 ---
+    const countEl = document.getElementById('resultCount');
+    if (countEl) {
+        if (filteredShops.length > 0) {
+            countEl.innerHTML = `共找到 <strong>${filteredShops.length}</strong> 家特約商店`;
+        } else {
+            countEl.innerHTML = `找不到符合條件的店家`;
+        }
+    }
+    // ----------------------------
 
+    currentPage = 1;
     renderList();
 }
 
