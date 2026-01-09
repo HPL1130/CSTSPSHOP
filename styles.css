@@ -115,3 +115,20 @@ body { margin: 0; font-family: "Noto Sans TC", system-ui, -apple-system, "Segoe 
 @media (hover: none) {
   .shop-card { transform: none !important; box-shadow:0 6px 12px rgba(0,0,0,0.04); }
 }
+/* 搜尋結果數量統計樣式 */
+.result-count {
+    padding: 10px 15px;
+    margin: 12px 0;
+    font-size: 0.95rem;
+    color: #444;
+    background-color: #fff;
+    border-left: 5px solid var(--brand); /* 使用您定義的紅色 */
+    border-radius: 4px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+
+.result-count strong {
+    color: var(--brand);
+    font-size: 1.1rem;
+    margin: 0 4px;
+}
